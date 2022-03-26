@@ -6,8 +6,6 @@ import { Attendants } from '../../Entities/Attendants';
 export const GET_SHIFTS = {
   type: new GraphQLList(ShiftType),
   resolve() {
-    return Shifts.find({
-      relations: ['attendant'],
-    });
+    return Shifts.find();
   },
 };

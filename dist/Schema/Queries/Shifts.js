@@ -7,8 +7,6 @@ const Shifts_1 = require("../../Entities/Shifts");
 exports.GET_SHIFTS = {
     type: new graphql_1.GraphQLList(ShiftType_1.ShiftType),
     resolve() {
-        return Shifts_1.Shifts.find({
-            relations: ['attendant'],
-        });
+        return Shifts_1.Shifts.find();
     },
 };

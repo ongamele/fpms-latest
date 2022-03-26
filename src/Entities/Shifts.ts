@@ -77,7 +77,4 @@ export class Shifts extends BaseEntity {
   @Column()
   Shift31!: string;
 
-  @OneToOne(() => Attendants, (attendant) => attendant.shifts)
-  @JoinColumn()
-  attendant: Attendants[];
 }

@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Attendants = void 0;
 const typeorm_1 = require("typeorm");
-const Shifts_1 = require("./Shifts");
 let Attendants = class Attendants extends typeorm_1.BaseEntity {
 };
 __decorate([
@@ -54,10 +53,6 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Attendants.prototype, "Photo", void 0);
-__decorate([
-    (0, typeorm_1.OneToOne)(() => Shifts_1.Shifts, (shifts) => shifts.attendant),
-    __metadata("design:type", Shifts_1.Shifts)
-], Attendants.prototype, "shifts", void 0);
 Attendants = __decorate([
     (0, typeorm_1.Entity)()
 ], Attendants);

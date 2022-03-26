@@ -39,7 +39,4 @@ export class Attendants extends BaseEntity {
 
   @Column()
   Photo!: string;
-
-  @OneToOne(() => Shifts, (shifts) => shifts.attendant)
-  shifts: Shifts;
 }

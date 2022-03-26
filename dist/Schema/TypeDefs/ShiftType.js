@@ -1,0 +1,42 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ShiftType = void 0;
+const graphql_1 = require("graphql");
+exports.ShiftType = new graphql_1.GraphQLObjectType({
+    name: 'ShiftType',
+    fields: () => ({
+        ID: { type: graphql_1.GraphQLInt },
+        AttendantID: { type: graphql_1.GraphQLString },
+        Shift1: { type: graphql_1.GraphQLString },
+        Shift2: { type: graphql_1.GraphQLString },
+        Shift3: { type: graphql_1.GraphQLString },
+        Shift4: { type: graphql_1.GraphQLString },
+        Shift5: { type: graphql_1.GraphQLString },
+        Shift6: { type: graphql_1.GraphQLString },
+        Shift7: { type: graphql_1.GraphQLString },
+        Shift8: { type: graphql_1.GraphQLString },
+        Shift9: { type: graphql_1.GraphQLString },
+        Shift10: { type: graphql_1.GraphQLString },
+        Shift11: { type: graphql_1.GraphQLString },
+        Shift12: { type: graphql_1.GraphQLString },
+        Shift13: { type: graphql_1.GraphQLString },
+        Shift14: { type: graphql_1.GraphQLString },
+        Shift15: { type: graphql_1.GraphQLString },
+        Shift16: { type: graphql_1.GraphQLString },
+        Shift17: { type: graphql_1.GraphQLString },
+        Shift18: { type: graphql_1.GraphQLString },
+        Shift19: { type: graphql_1.GraphQLString },
+        Shift20: { type: graphql_1.GraphQLString },
+        Shift21: { type: graphql_1.GraphQLString },
+        Shift22: { type: graphql_1.GraphQLString },
+        Shift23: { type: graphql_1.GraphQLString },
+        Shift24: { type: graphql_1.GraphQLString },
+        Shift25: { type: graphql_1.GraphQLString },
+        Shift26: { type: graphql_1.GraphQLString },
+        Shift27: { type: graphql_1.GraphQLString },
+        Shift28: { type: graphql_1.GraphQLString },
+        Shift29: { type: graphql_1.GraphQLString },
+        Shift30: { type: graphql_1.GraphQLString },
+        Shift31: { type: graphql_1.GraphQLString },
+    }),
+});

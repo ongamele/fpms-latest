@@ -91,7 +91,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         type: 'mysql',
         host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
         port: 3306,
-        database: 'sys',
+        database: 'timetables',
         username: 'pcsglobalFPMSDB',
         password: 'pcsg1234',
         // logging: true,

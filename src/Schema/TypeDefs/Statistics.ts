@@ -1,0 +1,37 @@
+import {
+  GraphQLObjectType,
+  GraphQLID,
+  GraphQLInt,
+  GraphQLString,
+  GraphQLFloat,
+} from 'graphql';
+
+export const StatisticsType = new GraphQLObjectType({
+  name: 'Statistics',
+  fields: () => ({
+    UniqueID: { type: GraphQLInt },
+    EventTime: { type: GraphQLString },
+    Service_stat_LongWait_Day_Total: { type: GraphQLInt },
+    Service_stat_U93_Daily: { type: GraphQLInt },
+    Service_stat_U95_Daily: { type: GraphQLInt },
+    Service_stat_Diesel_Daily: { type: GraphQLInt },
+    Service_stat_Account_Daily: { type: GraphQLInt },
+    Service_stat_AirTyre_Daily: { type: GraphQLInt },
+    Service_stat_Bakkie_Daily: { type: GraphQLInt },
+    Service_stat_Bike_Daily: { type: GraphQLInt },
+    Service_stat_Breakdown_Daily: { type: GraphQLInt },
+    Service_stat_Car_Daily: { type: GraphQLInt },
+    Service_stat_Card_Daily: { type: GraphQLInt },
+    Service_stat_Cash_Daily: { type: GraphQLInt },
+    Service_stat_DrivebyServices_Daily: { type: GraphQLInt },
+    Service_stat_Fleetcard_Daily: { type: GraphQLInt },
+    Service_stat_Litres_Daily: { type: GraphQLFloat },
+    Service_stat_Missed_Daily: { type: GraphQLInt },
+    Service_stat_noTRX_Daily: { type: GraphQLInt },
+    Service_stat_Oil_Daily: { type: GraphQLInt },
+    Service_stat_OtherServices_Daily: { type: GraphQLInt },
+    Service_stat_SmallCar_Daily: { type: GraphQLInt },
+    Service_stat_SUV_Daily: { type: GraphQLInt },
+    Service_stat_Taxi_Daily: { type: GraphQLInt },
+  }),
+});

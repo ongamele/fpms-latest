@@ -78,11 +78,11 @@ const main = async () => {
 
   await createConnection({
     type: 'mysql',
-    host: '127.0.0.1',
+    host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
     port: 3306,
-    database: 'sys',
-    username: 'root',
-    password: 'paragongeekssql',
+    database: 'timetables',
+    username: 'pcsglobalFPMSDB',
+    password: 'pcsg1234',
     // logging: true,
     synchronize: false,
     insecureAuth: true,

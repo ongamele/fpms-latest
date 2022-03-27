@@ -52,10 +52,10 @@ const Attendant12_1 = require("./ShiftsEntities/Attendant12");
 const Attendant13_1 = require("./ShiftsEntities/Attendant13");
 const Attendant14_1 = require("./ShiftsEntities/Attendant14");
 const Attendant15_1 = require("./ShiftsEntities/Attendant15");
+const Attendant16_1 = require("./ShiftsEntities/Attendant16");
 const Attendants_1 = require("./Entities/Attendants");
 const Shifts_1 = require("./Entities/Shifts");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    const PORT = process.env.PORT || 3001;
     /*await createConnection({
       type: 'mysql',
       host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
@@ -89,11 +89,11 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     });*/
     yield (0, typeorm_1.createConnection)({
         type: 'mysql',
-        host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
+        host: '127.0.0.1',
         port: 3306,
-        database: 'timetables',
-        username: 'pcsglobalFPMSDB',
-        password: 'pcsg1234',
+        database: 'sys',
+        username: 'root',
+        password: 'paragongeekssql',
         // logging: true,
         synchronize: false,
         insecureAuth: true,
@@ -113,6 +113,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             Attendant13_1.Attendant13,
             Attendant14_1.Attendant14,
             Attendant15_1.Attendant15,
+            Attendant16_1.Attendant16,
             Attendants_1.Attendants,
             Shifts_1.Shifts,
         ],
@@ -124,7 +125,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         schema: Schema_1.schema,
         graphiql: true,
     }));
-    app.listen(PORT, () => {
+    app.listen(3001, () => {
         console.log('SERVER RUNNING ON PORT 3001');
     });
 });

@@ -31,16 +31,64 @@ exports.UPDATE_ATTENDANT1 = {
         id: { type: graphql_1.GraphQLID },
         start: { type: graphql_1.GraphQLString },
         end: { type: graphql_1.GraphQLString },
+        attendant: { type: graphql_1.GraphQLString },
     },
     resolve(parent, args) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id, start, end } = args;
-            const attendant = yield Attendant1_1.Attendant1.findOne({ ID: id });
-            if (!attendant) {
-                throw new Error('SHIFT DOESNT EXIST');
+            const { id, start, end, attendant } = args;
+            const attendantData = yield Attendant1_1.Attendant1.findOne({ ID: id });
+            if (attendant == 'Sithembile') {
+                yield Attendant1_1.Attendant1.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
             }
-            yield Attendant1_1.Attendant1.update(id, { Start: start, End: end });
-            return { successful: true, message: 'SHIFT UPDATED' };
+            if (attendant == 'Thapelo') {
+                yield Attendant2_1.Attendant2.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Lethu') {
+                yield Attendant3_1.Attendant3.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Thulile') {
+                yield Attendant4_1.Attendant4.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Marvellous') {
+                yield Attendant5_1.Attendant5.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Dannick') {
+                yield Attendant6_1.Attendant6.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Ntuthuko') {
+                yield Attendant7_1.Attendant7.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Sabelo') {
+                yield Attendant8_1.Attendant8.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Nyiko') {
+                yield Attendant10_1.Attendant10.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Vusi') {
+                yield Attendant12_1.Attendant12.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Sicelo') {
+                yield Attendant13_1.Attendant13.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Thamsanqa') {
+                yield Attendant14_1.Attendant14.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Joseph') {
+                yield Attendant15_1.Attendant15.update(id, { Start: start, End: end });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
         });
     },
 };

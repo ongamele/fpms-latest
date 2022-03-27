@@ -22,17 +22,74 @@ export const UPDATE_ATTENDANT1 = {
     id: { type: GraphQLID },
     start: { type: GraphQLString },
     end: { type: GraphQLString },
+    attendant: { type: GraphQLString },
   },
   async resolve(parent: any, args: any) {
-    const { id, start, end } = args;
-    const attendant = await Attendant1.findOne({ ID: id });
+    const { id, start, end, attendant } = args;
+    const attendantData = await Attendant1.findOne({ ID: id });
 
-    if (!attendant) {
-      throw new Error('SHIFT DOESNT EXIST');
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
     }
-    await Attendant1.update(id, { Start: start, End: end });
 
-    return { successful: true, message: 'SHIFT UPDATED' };
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Lethu') {
+      await Attendant3.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Marvellous') {
+      await Attendant5.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Joseph') {
+      await Attendant15.update(id, { Start: start, End: end });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
   },
 };
 

@@ -39,11 +39,11 @@ import { Attendant12 } from './ShiftsEntities/Attendant12';
 import { Attendant13 } from './ShiftsEntities/Attendant13';
 import { Attendant14 } from './ShiftsEntities/Attendant14';
 import { Attendant15 } from './ShiftsEntities/Attendant15';
+import { Attendant16 } from './ShiftsEntities/Attendant16';
 import { Attendants } from './Entities/Attendants';
 import { Shifts } from './Entities/Shifts';
 
 const main = async () => {
-  const PORT = process.env.PORT || 3001;
   /*await createConnection({
     type: 'mysql',
     host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
@@ -78,11 +78,11 @@ const main = async () => {
 
   await createConnection({
     type: 'mysql',
-    host: 'dbfpms.cxcxvgzikyks.us-east-2.rds.amazonaws.com',
+    host: '127.0.0.1',
     port: 3306,
-    database: 'timetables',
-    username: 'pcsglobalFPMSDB',
-    password: 'pcsg1234',
+    database: 'sys',
+    username: 'root',
+    password: 'paragongeekssql',
     // logging: true,
     synchronize: false,
     insecureAuth: true,
@@ -102,6 +102,7 @@ const main = async () => {
       Attendant13,
       Attendant14,
       Attendant15,
+      Attendant16,
       Attendants,
       Shifts,
     ],
@@ -118,7 +119,7 @@ const main = async () => {
     })
   );
 
-  app.listen(PORT, () => {
+  app.listen(3001, () => {
     console.log('SERVER RUNNING ON PORT 3001');
   });
 };

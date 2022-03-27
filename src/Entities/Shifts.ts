@@ -76,5 +76,4 @@ export class Shifts extends BaseEntity {
   Shift30!: string;
   @Column()
   Shift31!: string;
-
 }

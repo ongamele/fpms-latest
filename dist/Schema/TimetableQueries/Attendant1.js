@@ -32,13 +32,13 @@ exports.GET_ATTENDANT_TIMETABLE = {
         if (attendant == 'Thapelo') {
             return Attendant2_1.Attendant2.find({ order: { ID: 'ASC' }, take: 31 });
         }
-        if (attendant == 'Lethu') {
+        if (attendant == 'Tawanda') {
             return Attendant3_1.Attendant3.find({ order: { ID: 'ASC' }, take: 31 });
         }
         if (attendant == 'Thulile') {
             return Attendant4_1.Attendant4.find({ order: { ID: 'ASC' }, take: 31 });
         }
-        if (attendant == 'Marvellous') {
+        if (attendant == 'David') {
             return Attendant5_1.Attendant5.find({ order: { ID: 'ASC' }, take: 31 });
         }
         if (attendant == 'Dannick') {
@@ -50,8 +50,14 @@ exports.GET_ATTENDANT_TIMETABLE = {
         if (attendant == 'Sabelo') {
             return Attendant8_1.Attendant8.find({ order: { ID: 'ASC' }, take: 31 });
         }
+        if (attendant == 'Aron') {
+            return Attendant9_1.Attendant9.find({ order: { ID: 'ASC' }, take: 31 });
+        }
         if (attendant == 'Nyiko') {
             return Attendant10_1.Attendant10.find({ order: { ID: 'ASC' }, take: 31 });
+        }
+        if (attendant == 'Tshifiwa') {
+            return Attendant11_1.Attendant11.find({ order: { ID: 'ASC' }, take: 31 });
         }
         if (attendant == 'Vusi') {
             return Attendant12_1.Attendant12.find({ order: { ID: 'ASC' }, take: 31 });
@@ -62,8 +68,11 @@ exports.GET_ATTENDANT_TIMETABLE = {
         if (attendant == 'Thamsanqa') {
             return Attendant14_1.Attendant14.find({ order: { ID: 'ASC' }, take: 31 });
         }
-        if (attendant == 'Joseph') {
+        if (attendant == 'Mvuyisi') {
             return Attendant15_1.Attendant15.find({ order: { ID: 'ASC' }, take: 31 });
+        }
+        if (attendant == 'Perfect') {
+            return Attendant16_1.Attendant16.find({ order: { ID: 'ASC' }, take: 31 });
         }
     },
 };

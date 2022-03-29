@@ -42,6 +42,7 @@ const Attendant1_17 = require("./TimetableQueries/Attendant1");
 const Attendant1_18 = require("./TimetableMutations/Attendant1");
 const Attendant1_19 = require("./TimetableMutations/Attendant1");
 const Attendant1_20 = require("./TimetableMutations/Attendant1");
+const Attendant1_21 = require("./TimetableMutations/Attendant1");
 const Attendants_1 = require("./Mutations/Attendants");
 const Shifts_1 = require("./Mutations/Shifts");
 const Attendants_2 = require("./Mutations/Attendants");
@@ -96,10 +97,11 @@ const Mutation = new graphql_1.GraphQLObjectType({
     fields: {
         updateAttendant1: Attendant1_18.UPDATE_ATTENDANT1,
         updateAttendant1Pumps: Attendant1_19.UPDATE_ATTENDANT1_PUMPS,
-        updateAttendantClocking: Attendant1_20.UPDATE_ATTENDANT_CLOCKING,
+        updateAttendantClocking: Attendant1_21.UPDATE_ATTENDANT_CLOCKING,
         createAttendant: Attendants_1.CREATE_ATTENDANT,
         login: Attendants_2.LOGIN,
         createAttendantShifts: Shifts_1.CREATE_ATTENDANT_SHIFTS,
+        updateAttendantDay: Attendant1_20.UPDATE_ATTENDANT_DAY,
     },
 });
 exports.schema = new graphql_1.GraphQLSchema({

@@ -38,6 +38,7 @@ import { GET_ATTENDANT16 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT_TIMETABLE } from './TimetableQueries/Attendant1';
 import { UPDATE_ATTENDANT1 } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT1_PUMPS } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_DAY } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_CLOCKING } from './TimetableMutations/Attendant1';
 import { CREATE_ATTENDANT } from './Mutations/Attendants';
 import { CREATE_ATTENDANT_SHIFTS } from './Mutations/Shifts';
@@ -98,6 +99,7 @@ const Mutation = new GraphQLObjectType({
     createAttendant: CREATE_ATTENDANT,
     login: LOGIN,
     createAttendantShifts: CREATE_ATTENDANT_SHIFTS,
+    updateAttendantDay: UPDATE_ATTENDANT_DAY,
   },
 });
 

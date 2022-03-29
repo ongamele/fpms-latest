@@ -32,7 +32,7 @@ export const GET_ATTENDANT_TIMETABLE = {
       return Attendant2.find({ order: { ID: 'ASC' }, take: 31 });
     }
 
-    if (attendant == 'Lethu') {
+    if (attendant == 'Tawanda') {
       return Attendant3.find({ order: { ID: 'ASC' }, take: 31 });
     }
 
@@ -40,7 +40,7 @@ export const GET_ATTENDANT_TIMETABLE = {
       return Attendant4.find({ order: { ID: 'ASC' }, take: 31 });
     }
 
-    if (attendant == 'Marvellous') {
+    if (attendant == 'David') {
       return Attendant5.find({ order: { ID: 'ASC' }, take: 31 });
     }
 
@@ -55,8 +55,17 @@ export const GET_ATTENDANT_TIMETABLE = {
     if (attendant == 'Sabelo') {
       return Attendant8.find({ order: { ID: 'ASC' }, take: 31 });
     }
+
+    if (attendant == 'Aron') {
+      return Attendant9.find({ order: { ID: 'ASC' }, take: 31 });
+    }
+
     if (attendant == 'Nyiko') {
       return Attendant10.find({ order: { ID: 'ASC' }, take: 31 });
+    }
+
+    if (attendant == 'Tshifiwa') {
+      return Attendant11.find({ order: { ID: 'ASC' }, take: 31 });
     }
     if (attendant == 'Vusi') {
       return Attendant12.find({ order: { ID: 'ASC' }, take: 31 });
@@ -70,8 +79,12 @@ export const GET_ATTENDANT_TIMETABLE = {
       return Attendant14.find({ order: { ID: 'ASC' }, take: 31 });
     }
 
-    if (attendant == 'Joseph') {
+    if (attendant == 'Mvuyisi') {
       return Attendant15.find({ order: { ID: 'ASC' }, take: 31 });
+    }
+
+    if (attendant == 'Perfect') {
+      return Attendant16.find({ order: { ID: 'ASC' }, take: 31 });
     }
   },
 };

@@ -40,7 +40,13 @@ import { UPDATE_ATTENDANT_START } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_END } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT1_PUMPS } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_DAY } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_CLOCKING } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_CLOCKIN } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_CLOCKOUT } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_REASON } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_ADJ } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_CODE } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_DUE_DATE } from './TimetableMutations/Attendant1';
+import { UPDATE_ATTENDANT_MIN } from './TimetableMutations/Attendant1';
 import { CREATE_ATTENDANT } from './Mutations/Attendants';
 import { CREATE_ATTENDANT_SHIFTS } from './Mutations/Shifts';
 import { LOGIN } from './Mutations/Attendants';
@@ -97,7 +103,13 @@ const Mutation = new GraphQLObjectType({
     updateAttendantStart: UPDATE_ATTENDANT_START,
     updateAttendantEnd: UPDATE_ATTENDANT_END,
     updateAttendant1Pumps: UPDATE_ATTENDANT1_PUMPS,
-    updateAttendantClocking: UPDATE_ATTENDANT_CLOCKING,
+    updateAttendantClockIn: UPDATE_ATTENDANT_CLOCKIN,
+    updateAttendantClockOut: UPDATE_ATTENDANT_CLOCKOUT,
+    updateAttendantReason: UPDATE_ATTENDANT_REASON,
+    updateAttendantAdj: UPDATE_ATTENDANT_ADJ,
+    updateAttendantCode: UPDATE_ATTENDANT_CODE,
+    updateAttendantDueDate: UPDATE_ATTENDANT_DUE_DATE,
+    updateAttendantMin: UPDATE_ATTENDANT_MIN,
     createAttendant: CREATE_ATTENDANT,
     login: LOGIN,
     createAttendantShifts: CREATE_ATTENDANT_SHIFTS,

@@ -17,5 +17,9 @@ exports.Timetable = new graphql_1.GraphQLObjectType({
         ClockOut: { type: graphql_1.GraphQLString },
         Pumps: { type: graphql_1.GraphQLString },
         Min: { type: graphql_1.GraphQLString },
+        Reason: { type: graphql_1.GraphQLString },
+        Adj: { type: graphql_1.GraphQLString },
+        Code: { type: graphql_1.GraphQLString },
+        Due_date: { type: graphql_1.GraphQLString },
     }),
 });

@@ -27,13 +27,13 @@ export class Attendant14 extends BaseEntity {
   End!: string;
 
   @Column()
-  Pumps!: string;
-
-  @Column()
   ClockIn!: string;
 
   @Column()
   ClockOut!: string;
+
+  @Column()
+  Pumps!: string;
 
   @Column()
   Reason!: string;
@@ -45,5 +45,11 @@ export class Attendant14 extends BaseEntity {
   Min!: string;
 
   @Column()
+  Adj!: string;
+
+  @Column()
   Pay_hrs!: string;
+
+  @Column()
+  Due_date!: string;
 }

@@ -45,5 +45,11 @@ export class Attendant11 extends BaseEntity {
   Min!: string;
 
   @Column()
+  Adj!: string;
+
+  @Column()
   Pay_hrs!: string;
+
+  @Column()
+  Due_date!: string;
 }

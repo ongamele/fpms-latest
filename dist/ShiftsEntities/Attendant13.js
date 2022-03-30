@@ -36,14 +36,10 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Attendant13.prototype, "Pumps", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Date)
 ], Attendant13.prototype, "Shifts", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Attendant13.prototype, "Start", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
@@ -57,6 +53,34 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Attendant13.prototype, "ClockOut", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Pumps", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Reason", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Code", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Min", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Adj", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Pay_hrs", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant13.prototype, "Due_date", void 0);
 Attendant13 = __decorate([
     (0, typeorm_1.Entity)()
 ], Attendant13);

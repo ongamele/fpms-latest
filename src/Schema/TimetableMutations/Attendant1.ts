@@ -547,3 +547,637 @@ export const UPDATE_ATTENDANT_DAY = {
     return { successful: true, message: 'DAY UPDATED' };
   },
 };
+
+export const UPDATE_ATTENDANT_CLOCKIN = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    clockIn: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, clockIn, attendant } = args;
+    const attendantData = await Attendant1.findOne({ ID: id });
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { ClockIn: clockIn });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_CLOCKOUT = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    clockOut: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, clockOut, attendant } = args;
+    const attendantData = await Attendant1.findOne({ ID: id });
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { ClockOut: clockOut });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_REASON = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    reason: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, reason, attendant } = args;
+    const attendantData = await Attendant1.findOne({ ID: id });
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { Reason: reason });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_ADJ = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    adj: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, adj, attendant } = args;
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { Adj: adj });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_CODE = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    code: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, code, attendant } = args;
+    const attendantData = await Attendant1.findOne({ ID: id });
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { Code: code });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_DUE_DATE = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    date: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, date, attendant } = args;
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { Due_date: date });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};
+
+export const UPDATE_ATTENDANT_MIN = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    min: { type: GraphQLString },
+    attendant: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, min, attendant } = args;
+
+    if (attendant == 'Sithembile') {
+      await Attendant1.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thapelo') {
+      await Attendant2.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Perfect') {
+      await Attendant16.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thulile') {
+      await Attendant4.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'David') {
+      await Attendant5.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Dannick') {
+      await Attendant6.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Ntuthuko') {
+      await Attendant7.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sabelo') {
+      await Attendant8.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Nyiko') {
+      await Attendant10.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+    if (attendant == 'Vusi') {
+      await Attendant12.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Sicelo') {
+      await Attendant13.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Thamsanqa') {
+      await Attendant14.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Mvuyisi') {
+      await Attendant15.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tawanda') {
+      await Attendant3.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Aron') {
+      await Attendant9.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+
+    if (attendant == 'Tshifiwa') {
+      await Attendant11.update(id, { Min: min });
+      return { successful: true, message: 'SHIFT UPDATED' };
+    }
+  },
+};

@@ -72,7 +72,15 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
+], Attendant2.prototype, "Adj", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
 ], Attendant2.prototype, "Pay_hrs", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Attendant2.prototype, "Due_date", void 0);
 Attendant2 = __decorate([
     (0, typeorm_1.Entity)()
 ], Attendant2);

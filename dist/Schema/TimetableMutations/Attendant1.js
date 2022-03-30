@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UPDATE_ATTENDANT_DAY = exports.UPDATE_ATTENDANT_CLOCKING = exports.UPDATE_ATTENDANT1_PUMPS = exports.UPDATE_ATTENDANT1 = void 0;
+exports.UPDATE_ATTENDANT_DAY = exports.UPDATE_ATTENDANT_CLOCKING = exports.UPDATE_ATTENDANT1_PUMPS = exports.UPDATE_ATTENDANT_END = exports.UPDATE_ATTENDANT_START = void 0;
 const graphql_1 = require("graphql");
 const Timetable_1 = require("../TypeDefs/Timetable");
 const Attendant1_1 = require("../../ShiftsEntities/Attendant1");
@@ -28,80 +28,157 @@ const Attendant13_1 = require("../../ShiftsEntities/Attendant13");
 const Attendant14_1 = require("../../ShiftsEntities/Attendant14");
 const Attendant15_1 = require("../../ShiftsEntities/Attendant15");
 const Attendant16_1 = require("../../ShiftsEntities/Attendant16");
-exports.UPDATE_ATTENDANT1 = {
+exports.UPDATE_ATTENDANT_START = {
     type: Timetable_1.Timetable,
     args: {
         id: { type: graphql_1.GraphQLID },
         start: { type: graphql_1.GraphQLString },
+        attendant: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id, start, attendant } = args;
+            const attendantData = yield Attendant1_1.Attendant1.findOne({ ID: id });
+            if (attendant == 'Sithembile') {
+                yield Attendant1_1.Attendant1.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Thapelo') {
+                yield Attendant2_1.Attendant2.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Perfect') {
+                yield Attendant16_1.Attendant16.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Thulile') {
+                yield Attendant4_1.Attendant4.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'David') {
+                yield Attendant5_1.Attendant5.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Dannick') {
+                yield Attendant6_1.Attendant6.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Ntuthuko') {
+                yield Attendant7_1.Attendant7.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Sabelo') {
+                yield Attendant8_1.Attendant8.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Nyiko') {
+                yield Attendant10_1.Attendant10.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Vusi') {
+                yield Attendant12_1.Attendant12.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Sicelo') {
+                yield Attendant13_1.Attendant13.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Thamsanqa') {
+                yield Attendant14_1.Attendant14.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Mvuyisi') {
+                yield Attendant15_1.Attendant15.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Tawanda') {
+                yield Attendant3_1.Attendant3.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Aron') {
+                yield Attendant9_1.Attendant9.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+            if (attendant == 'Tshifiwa') {
+                yield Attendant11_1.Attendant11.update(id, { Start: start });
+                return { successful: true, message: 'SHIFT UPDATED' };
+            }
+        });
+    },
+};
+exports.UPDATE_ATTENDANT_END = {
+    type: Timetable_1.Timetable,
+    args: {
+        id: { type: graphql_1.GraphQLID },
         end: { type: graphql_1.GraphQLString },
         attendant: { type: graphql_1.GraphQLString },
     },
     resolve(parent, args) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id, start, end, attendant } = args;
+            const { id, end, attendant } = args;
             const attendantData = yield Attendant1_1.Attendant1.findOne({ ID: id });
             if (attendant == 'Sithembile') {
-                yield Attendant1_1.Attendant1.update(id, { Start: start, End: end });
+                yield Attendant1_1.Attendant1.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Thapelo') {
-                yield Attendant2_1.Attendant2.update(id, { Start: start, End: end });
+                yield Attendant2_1.Attendant2.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Perfect') {
-                yield Attendant16_1.Attendant16.update(id, { Start: start, End: end });
+                yield Attendant16_1.Attendant16.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Thulile') {
-                yield Attendant4_1.Attendant4.update(id, { Start: start, End: end });
+                yield Attendant4_1.Attendant4.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'David') {
-                yield Attendant5_1.Attendant5.update(id, { Start: start, End: end });
+                yield Attendant5_1.Attendant5.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Dannick') {
-                yield Attendant6_1.Attendant6.update(id, { Start: start, End: end });
+                yield Attendant6_1.Attendant6.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Ntuthuko') {
-                yield Attendant7_1.Attendant7.update(id, { Start: start, End: end });
+                yield Attendant7_1.Attendant7.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Sabelo') {
-                yield Attendant8_1.Attendant8.update(id, { Start: start, End: end });
+                yield Attendant8_1.Attendant8.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Nyiko') {
-                yield Attendant10_1.Attendant10.update(id, { Start: start, End: end });
+                yield Attendant10_1.Attendant10.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Vusi') {
-                yield Attendant12_1.Attendant12.update(id, { Start: start, End: end });
+                yield Attendant12_1.Attendant12.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Sicelo') {
-                yield Attendant13_1.Attendant13.update(id, { Start: start, End: end });
+                yield Attendant13_1.Attendant13.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Thamsanqa') {
-                yield Attendant14_1.Attendant14.update(id, { Start: start, End: end });
+                yield Attendant14_1.Attendant14.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Mvuyisi') {
-                yield Attendant15_1.Attendant15.update(id, { Start: start, End: end });
+                yield Attendant15_1.Attendant15.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Tawanda') {
-                yield Attendant3_1.Attendant3.update(id, { Start: start, End: end });
+                yield Attendant3_1.Attendant3.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Aron') {
-                yield Attendant9_1.Attendant9.update(id, { Start: start, End: end });
+                yield Attendant9_1.Attendant9.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
             if (attendant == 'Tshifiwa') {
-                yield Attendant11_1.Attendant11.update(id, { Start: start, End: end });
+                yield Attendant11_1.Attendant11.update(id, { End: end });
                 return { successful: true, message: 'SHIFT UPDATED' };
             }
         });

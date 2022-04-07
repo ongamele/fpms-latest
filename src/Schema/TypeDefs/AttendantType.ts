@@ -1,4 +1,6 @@
+import { GraphQLList } from 'graphql';
 import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql';
+import { Timetable } from './Timetable';
 
 export const AttendantType = new GraphQLObjectType({
   name: 'AttendantType',
@@ -12,7 +14,7 @@ export const AttendantType = new GraphQLObjectType({
     DateOfEmployment: { type: GraphQLString },
     Password: { type: GraphQLString },
     SecurityQuestion: { type: GraphQLString },
-    IdPhoto: { type: GraphQLString },
     Photo: { type: GraphQLString },
+    Shifts: { type: GraphQLList(Timetable) },
   }),
 });

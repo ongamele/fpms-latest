@@ -217,6 +217,9 @@ export const UPDATE_ATTENDANT1_PUMPS = {
 
     if (attendant == 'Sithembile') {
       await Attendant1.update(id, { Pumps: pumps });
+      /*if (pumps == 'ALP' || pumps == 'Sick') {
+        await Attendant1.update(id, { Start: 0, End: 0 });
+      }*/
       return { successful: true, message: 'SHIFT UPDATED' };
     }
 

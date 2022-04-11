@@ -42,6 +42,7 @@ import { UPDATE_ATTENDANT_DAY } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_CLOCKIN } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_CLOCKOUT } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_REASON } from './TimetableMutations/Attendant1';
+import { GET_ATTENDANT_TIMETABLE_DETAILS } from './TimetableQueries/Attendant1';
 import { UPDATE_ATTENDANT_ADJ } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_CODE } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_DUE_DATE } from './TimetableMutations/Attendant1';
@@ -94,6 +95,7 @@ const RootQuery = new GraphQLObjectType({
     getAttendants: GET_ATTENDANTS,
     getShifts: GET_SHIFTS,
     getAttendantTimetable: GET_ATTENDANT_TIMETABLE,
+    getAttendantTimetableDetails: GET_ATTENDANT_TIMETABLE_DETAILS,
   },
 });
 

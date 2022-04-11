@@ -45,10 +45,11 @@ const Attendant1_20 = require("./TimetableMutations/Attendant1");
 const Attendant1_21 = require("./TimetableMutations/Attendant1");
 const Attendant1_22 = require("./TimetableMutations/Attendant1");
 const Attendant1_23 = require("./TimetableMutations/Attendant1");
-const Attendant1_24 = require("./TimetableMutations/Attendant1");
+const Attendant1_24 = require("./TimetableQueries/Attendant1");
 const Attendant1_25 = require("./TimetableMutations/Attendant1");
 const Attendant1_26 = require("./TimetableMutations/Attendant1");
 const Attendant1_27 = require("./TimetableMutations/Attendant1");
+const Attendant1_28 = require("./TimetableMutations/Attendant1");
 const Attendants_1 = require("./Mutations/Attendants");
 const Shifts_1 = require("./Mutations/Shifts");
 const Attendants_2 = require("./Mutations/Attendants");
@@ -97,6 +98,7 @@ const RootQuery = new graphql_1.GraphQLObjectType({
         getAttendants: Attendants_3.GET_ATTENDANTS,
         getShifts: Shifts_2.GET_SHIFTS,
         getAttendantTimetable: Attendants_4.GET_ATTENDANT_TIMETABLE,
+        getAttendantTimetableDetails: Attendant1_24.GET_ATTENDANT_TIMETABLE_DETAILS,
     },
 });
 const Mutation = new graphql_1.GraphQLObjectType({
@@ -108,10 +110,10 @@ const Mutation = new graphql_1.GraphQLObjectType({
         updateAttendantClockIn: Attendant1_21.UPDATE_ATTENDANT_CLOCKIN,
         updateAttendantClockOut: Attendant1_22.UPDATE_ATTENDANT_CLOCKOUT,
         updateAttendantReason: Attendant1_23.UPDATE_ATTENDANT_REASON,
-        updateAttendantAdj: Attendant1_24.UPDATE_ATTENDANT_ADJ,
-        updateAttendantCode: Attendant1_25.UPDATE_ATTENDANT_CODE,
-        updateAttendantDueDate: Attendant1_26.UPDATE_ATTENDANT_DUE_DATE,
-        updateAttendantMin: Attendant1_27.UPDATE_ATTENDANT_MIN,
+        updateAttendantAdj: Attendant1_25.UPDATE_ATTENDANT_ADJ,
+        updateAttendantCode: Attendant1_26.UPDATE_ATTENDANT_CODE,
+        updateAttendantDueDate: Attendant1_27.UPDATE_ATTENDANT_DUE_DATE,
+        updateAttendantMin: Attendant1_28.UPDATE_ATTENDANT_MIN,
         createAttendant: Attendants_1.CREATE_ATTENDANT,
         login: Attendants_2.LOGIN,
         createAttendantShifts: Shifts_1.CREATE_ATTENDANT_SHIFTS,

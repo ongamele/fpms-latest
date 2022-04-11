@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GET_ATTENDANT16 = exports.GET_ATTENDANT15 = exports.GET_ATTENDANT14 = exports.GET_ATTENDANT13 = exports.GET_ATTENDANT12 = exports.GET_ATTENDANT11 = exports.GET_ATTENDANT10 = exports.GET_ATTENDANT9 = exports.GET_ATTENDANT8 = exports.GET_ATTENDANT7 = exports.GET_ATTENDANT6 = exports.GET_ATTENDANT5 = exports.GET_ATTENDANT4 = exports.GET_ATTENDANT3 = exports.GET_ATTENDANT2 = exports.GET_ATTENDANT1 = exports.GET_ATTENDANT_TIMETABLE = void 0;
+exports.GET_ATTENDANT16 = exports.GET_ATTENDANT15 = exports.GET_ATTENDANT14 = exports.GET_ATTENDANT13 = exports.GET_ATTENDANT12 = exports.GET_ATTENDANT11 = exports.GET_ATTENDANT10 = exports.GET_ATTENDANT9 = exports.GET_ATTENDANT8 = exports.GET_ATTENDANT7 = exports.GET_ATTENDANT6 = exports.GET_ATTENDANT5 = exports.GET_ATTENDANT4 = exports.GET_ATTENDANT3 = exports.GET_ATTENDANT2 = exports.GET_ATTENDANT1 = exports.GET_ATTENDANT_TIMETABLE_DETAILS = void 0;
 const graphql_1 = require("graphql");
 const Timetable_1 = require("../TypeDefs/Timetable");
 const Attendant1_1 = require("../../ShiftsEntities/Attendant1");
@@ -19,7 +19,7 @@ const Attendant13_1 = require("../../ShiftsEntities/Attendant13");
 const Attendant14_1 = require("../../ShiftsEntities/Attendant14");
 const Attendant15_1 = require("../../ShiftsEntities/Attendant15");
 const Attendant16_1 = require("../../ShiftsEntities/Attendant16");
-exports.GET_ATTENDANT_TIMETABLE = {
+exports.GET_ATTENDANT_TIMETABLE_DETAILS = {
     type: new graphql_1.GraphQLList(Timetable_1.Timetable),
     args: {
         attendant: { type: graphql_1.GraphQLString },

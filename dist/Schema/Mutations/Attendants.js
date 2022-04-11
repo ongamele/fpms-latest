@@ -76,7 +76,7 @@ exports.LOGIN = {
                 Password: Password,
             });
             var attData = {};
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Sithembile') {
+            if (attendant.FirstName == 'Sithembile') {
                 const allShifts = yield Attendant1_1.Attendant1.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -98,7 +98,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Thapelo') {
+            if (attendant.FirstName == 'Thapelo') {
                 const allShifts = yield Attendant2_1.Attendant2.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -120,7 +120,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Tawanda') {
+            if (attendant.FirstName == 'Tawanda') {
                 const allShifts = yield Attendant3_1.Attendant3.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -142,7 +142,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Thulile') {
+            if (attendant.FirstName == 'Thulile') {
                 const allShifts = yield Attendant4_1.Attendant4.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -164,7 +164,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'David') {
+            if (attendant.FirstName == 'David') {
                 const allShifts = yield Attendant5_1.Attendant5.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -186,7 +186,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Dannick') {
+            if (attendant.FirstName == 'Dannick') {
                 const allShifts = yield Attendant6_1.Attendant6.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -208,7 +208,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Ntuthuko') {
+            if (attendant.FirstName == 'Ntuthuko') {
                 const allShifts = yield Attendant7_1.Attendant7.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -230,7 +230,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Sabelo') {
+            if (attendant.FirstName == 'Sabelo') {
                 const allShifts = yield Attendant8_1.Attendant8.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -252,7 +252,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Aron') {
+            if (attendant.FirstName == 'Aron') {
                 const allShifts = yield Attendant9_1.Attendant9.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -274,7 +274,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Nyiko') {
+            if (attendant.FirstName == 'Nyiko') {
                 const allShifts = yield Attendant10_1.Attendant10.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -296,7 +296,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Tshifiwa') {
+            if (attendant.FirstName == 'Tshifiwa') {
                 const allShifts = yield Attendant11_1.Attendant11.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -318,7 +318,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Visi') {
+            if (attendant.FirstName == 'Visi') {
                 const allShifts = yield Attendant12_1.Attendant12.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -340,7 +340,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Sicelo') {
+            if (attendant.FirstName == 'Sicelo') {
                 const allShifts = yield Attendant13_1.Attendant13.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -362,7 +362,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Thamsanqa') {
+            if (attendant.FirstName == 'Thamsanqa') {
                 const allShifts = yield Attendant14_1.Attendant14.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -384,7 +384,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Mvuyisi') {
+            if (attendant.FirstName == 'Mvuyisi') {
                 const allShifts = yield Attendant15_1.Attendant15.find({
                     order: { ID: 'ASC' },
                     take: 31,
@@ -406,7 +406,7 @@ exports.LOGIN = {
                 };
                 return attData;
             }
-            if ((attendant === null || attendant === void 0 ? void 0 : attendant.FirstName) == 'Perfect]') {
+            if (attendant.FirstName == 'Perfect]') {
                 const allShifts = yield Attendant16_1.Attendant16.find({
                     order: { ID: 'ASC' },
                     take: 31,

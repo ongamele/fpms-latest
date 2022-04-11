@@ -78,7 +78,7 @@ export const LOGIN = {
 
     var attData = {};
 
-    if (attendant?.FirstName == 'Sithembile') {
+    if (attendant.FirstName == 'Sithembile') {
       const allShifts = await Attendant1.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -102,7 +102,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Thapelo') {
+    if (attendant.FirstName == 'Thapelo') {
       const allShifts = await Attendant2.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -126,7 +126,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Tawanda') {
+    if (attendant.FirstName == 'Tawanda') {
       const allShifts = await Attendant3.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -150,7 +150,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Thulile') {
+    if (attendant.FirstName == 'Thulile') {
       const allShifts = await Attendant4.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -174,7 +174,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'David') {
+    if (attendant.FirstName == 'David') {
       const allShifts = await Attendant5.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -198,7 +198,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Dannick') {
+    if (attendant.FirstName == 'Dannick') {
       const allShifts = await Attendant6.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -222,7 +222,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Ntuthuko') {
+    if (attendant.FirstName == 'Ntuthuko') {
       const allShifts = await Attendant7.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -246,7 +246,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Sabelo') {
+    if (attendant.FirstName == 'Sabelo') {
       const allShifts = await Attendant8.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -270,7 +270,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Aron') {
+    if (attendant.FirstName == 'Aron') {
       const allShifts = await Attendant9.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -294,7 +294,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Nyiko') {
+    if (attendant.FirstName == 'Nyiko') {
       const allShifts = await Attendant10.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -318,7 +318,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Tshifiwa') {
+    if (attendant.FirstName == 'Tshifiwa') {
       const allShifts = await Attendant11.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -342,7 +342,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Visi') {
+    if (attendant.FirstName == 'Visi') {
       const allShifts = await Attendant12.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -367,7 +367,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Sicelo') {
+    if (attendant.FirstName == 'Sicelo') {
       const allShifts = await Attendant13.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -391,7 +391,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Thamsanqa') {
+    if (attendant.FirstName == 'Thamsanqa') {
       const allShifts = await Attendant14.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -415,7 +415,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Mvuyisi') {
+    if (attendant.FirstName == 'Mvuyisi') {
       const allShifts = await Attendant15.find({
         order: { ID: 'ASC' },
         take: 31,
@@ -439,7 +439,7 @@ export const LOGIN = {
       return attData;
     }
 
-    if (attendant?.FirstName == 'Perfect]') {
+    if (attendant.FirstName == 'Perfect]') {
       const allShifts = await Attendant16.find({
         order: { ID: 'ASC' },
         take: 31,

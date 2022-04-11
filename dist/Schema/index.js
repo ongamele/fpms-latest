@@ -38,7 +38,7 @@ const Attendant1_13 = require("./TimetableQueries/Attendant1");
 const Attendant1_14 = require("./TimetableQueries/Attendant1");
 const Attendant1_15 = require("./TimetableQueries/Attendant1");
 const Attendant1_16 = require("./TimetableQueries/Attendant1");
-const Attendant1_17 = require("./TimetableQueries/Attendant1");
+const Attendant1_17 = require("./TimetableMutations/Attendant1");
 const Attendant1_18 = require("./TimetableMutations/Attendant1");
 const Attendant1_19 = require("./TimetableMutations/Attendant1");
 const Attendant1_20 = require("./TimetableMutations/Attendant1");
@@ -49,12 +49,12 @@ const Attendant1_24 = require("./TimetableMutations/Attendant1");
 const Attendant1_25 = require("./TimetableMutations/Attendant1");
 const Attendant1_26 = require("./TimetableMutations/Attendant1");
 const Attendant1_27 = require("./TimetableMutations/Attendant1");
-const Attendant1_28 = require("./TimetableMutations/Attendant1");
 const Attendants_1 = require("./Mutations/Attendants");
 const Shifts_1 = require("./Mutations/Shifts");
 const Attendants_2 = require("./Mutations/Attendants");
 const Shifts_2 = require("./Queries/Shifts");
 const Attendants_3 = require("./Queries/Attendants");
+const Attendants_4 = require("./Queries/Attendants");
 const RootQuery = new graphql_1.GraphQLObjectType({
     name: 'RootQuery',
     fields: {
@@ -96,26 +96,26 @@ const RootQuery = new graphql_1.GraphQLObjectType({
         getAttendant16: Attendant1_16.GET_ATTENDANT16,
         getAttendants: Attendants_3.GET_ATTENDANTS,
         getShifts: Shifts_2.GET_SHIFTS,
-        getAttendantTimetable: Attendant1_17.GET_ATTENDANT_TIMETABLE,
+        getAttendantTimetable: Attendants_4.GET_ATTENDANT_TIMETABLE,
     },
 });
 const Mutation = new graphql_1.GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        updateAttendantStart: Attendant1_18.UPDATE_ATTENDANT_START,
-        updateAttendantEnd: Attendant1_19.UPDATE_ATTENDANT_END,
-        updateAttendant1Pumps: Attendant1_20.UPDATE_ATTENDANT1_PUMPS,
-        updateAttendantClockIn: Attendant1_22.UPDATE_ATTENDANT_CLOCKIN,
-        updateAttendantClockOut: Attendant1_23.UPDATE_ATTENDANT_CLOCKOUT,
-        updateAttendantReason: Attendant1_24.UPDATE_ATTENDANT_REASON,
-        updateAttendantAdj: Attendant1_25.UPDATE_ATTENDANT_ADJ,
-        updateAttendantCode: Attendant1_26.UPDATE_ATTENDANT_CODE,
-        updateAttendantDueDate: Attendant1_27.UPDATE_ATTENDANT_DUE_DATE,
-        updateAttendantMin: Attendant1_28.UPDATE_ATTENDANT_MIN,
+        updateAttendantStart: Attendant1_17.UPDATE_ATTENDANT_START,
+        updateAttendantEnd: Attendant1_18.UPDATE_ATTENDANT_END,
+        updateAttendant1Pumps: Attendant1_19.UPDATE_ATTENDANT1_PUMPS,
+        updateAttendantClockIn: Attendant1_21.UPDATE_ATTENDANT_CLOCKIN,
+        updateAttendantClockOut: Attendant1_22.UPDATE_ATTENDANT_CLOCKOUT,
+        updateAttendantReason: Attendant1_23.UPDATE_ATTENDANT_REASON,
+        updateAttendantAdj: Attendant1_24.UPDATE_ATTENDANT_ADJ,
+        updateAttendantCode: Attendant1_25.UPDATE_ATTENDANT_CODE,
+        updateAttendantDueDate: Attendant1_26.UPDATE_ATTENDANT_DUE_DATE,
+        updateAttendantMin: Attendant1_27.UPDATE_ATTENDANT_MIN,
         createAttendant: Attendants_1.CREATE_ATTENDANT,
         login: Attendants_2.LOGIN,
         createAttendantShifts: Shifts_1.CREATE_ATTENDANT_SHIFTS,
-        updateAttendantDay: Attendant1_21.UPDATE_ATTENDANT_DAY,
+        updateAttendantDay: Attendant1_20.UPDATE_ATTENDANT_DAY,
     },
 });
 exports.schema = new graphql_1.GraphQLSchema({

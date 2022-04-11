@@ -35,7 +35,6 @@ import { GET_ATTENDANT13 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT14 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT15 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT16 } from './TimetableQueries/Attendant1';
-import { GET_ATTENDANT_TIMETABLE } from './TimetableQueries/Attendant1';
 import { UPDATE_ATTENDANT_START } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT_END } from './TimetableMutations/Attendant1';
 import { UPDATE_ATTENDANT1_PUMPS } from './TimetableMutations/Attendant1';
@@ -52,6 +51,7 @@ import { CREATE_ATTENDANT_SHIFTS } from './Mutations/Shifts';
 import { LOGIN } from './Mutations/Attendants';
 import { GET_SHIFTS } from './Queries/Shifts';
 import { GET_ATTENDANTS } from './Queries/Attendants';
+import { GET_ATTENDANT_TIMETABLE } from './Queries/Attendants';
 const RootQuery = new GraphQLObjectType({
   name: 'RootQuery',
   fields: {

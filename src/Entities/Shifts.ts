@@ -1,79 +1,64 @@
 import {
   BaseEntity,
   OneToOne,
+  ManyToOne,
   JoinColumn,
   Column,
   Entity,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Attendants } from './Attendants';
+import { Employees } from './Employees';
 
 @Entity()
 export class Shifts extends BaseEntity {
   @PrimaryGeneratedColumn()
   ID!: number;
   @Column()
-  AttendantID!: string;
+  EmployeeID!: number;
+
   @Column()
-  Shift1!: string;
+  Start!: string;
+
   @Column()
-  Shift2!: string;
+  End!: string;
+
   @Column()
-  Shift3!: string;
+  Pumps!: string;
+
   @Column()
-  Shift4!: string;
+  Days!: string;
+
   @Column()
-  Shift5!: string;
+  ClockIn!: string;
+
   @Column()
-  Shift6!: string;
+  ClockOut!: string;
+
   @Column()
-  Shift7!: string;
+  Date!: string;
+
   @Column()
-  Shift8!: string;
+  Due_date!: string;
+
   @Column()
-  Shift9!: string;
+  Reason!: string;
+
   @Column()
-  Shift10!: string;
+  Code!: string;
+
   @Column()
-  Shift11!: string;
+  Min!: string;
+
   @Column()
-  Shift12!: string;
+  Adj!: string;
+
   @Column()
-  Shift13!: string;
+  Pay_hrs!: string;
+
   @Column()
-  Shift14!: string;
-  @Column()
-  Shift15!: string;
-  @Column()
-  Shift16!: string;
-  @Column()
-  Shift17!: string;
-  @Column()
-  Shift18!: string;
-  @Column()
-  Shift19!: string;
-  @Column()
-  Shift20!: string;
-  @Column()
-  Shift21!: string;
-  @Column()
-  Shift22!: string;
-  @Column()
-  Shift23!: string;
-  @Column()
-  Shift24!: string;
-  @Column()
-  Shift25!: string;
-  @Column()
-  Shift26!: string;
-  @Column()
-  Shift27!: string;
-  @Column()
-  Shift28!: string;
-  @Column()
-  Shift29!: string;
-  @Column()
-  Shift30!: string;
-  @Column()
-  Shift31!: string;
+  Shift_number!: number;
+
+  @ManyToOne(() => Employees, (employees: Employees) => employees.shifts) // specify inverse side as a second parameter
+  @JoinColumn({ name: 'EmployeeID' })
+  employees: Employees;
 }

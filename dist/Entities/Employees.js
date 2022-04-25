@@ -9,82 +9,65 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Shifts = void 0;
+exports.Employees = void 0;
 const typeorm_1 = require("typeorm");
-const Employees_1 = require("./Employees");
-let Shifts = class Shifts extends typeorm_1.BaseEntity {
+const Shifts_1 = require("./Shifts");
+let Employees = class Employees extends typeorm_1.BaseEntity {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Shifts.prototype, "ID", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Shifts.prototype, "EmployeeID", void 0);
+], Employees.prototype, "EmployeeID", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Start", void 0);
+], Employees.prototype, "FirstName", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "End", void 0);
+], Employees.prototype, "LastName", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Pumps", void 0);
+], Employees.prototype, "IdNumber", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Days", void 0);
+], Employees.prototype, "CellNumber", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "ClockIn", void 0);
+], Employees.prototype, "Gender", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "ClockOut", void 0);
+], Employees.prototype, "Position", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Date", void 0);
+], Employees.prototype, "DateOfEmployment", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Due_date", void 0);
+], Employees.prototype, "Password", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Reason", void 0);
+], Employees.prototype, "SecurityQuestion", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Code", void 0);
+], Employees.prototype, "Photo", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Shifts.prototype, "Min", void 0);
+], Employees.prototype, "Answer", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Shifts.prototype, "Adj", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Shifts.prototype, "Pay_hrs", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Shifts.prototype, "Shift_number", void 0);
-__decorate([
-    (0, typeorm_1.ManyToOne)(() => Employees_1.Employees, (employees) => employees.shifts) // specify inverse side as a second parameter
+    (0, typeorm_1.OneToMany)(() => Shifts_1.Shifts, (shifts) => shifts.employees) // specify inverse side as a second parameter
     ,
-    (0, typeorm_1.JoinColumn)({ name: 'EmployeeID' }),
-    __metadata("design:type", Employees_1.Employees)
-], Shifts.prototype, "employees", void 0);
-Shifts = __decorate([
+    __metadata("design:type", Shifts_1.Shifts)
+], Employees.prototype, "shifts", void 0);
+Employees = __decorate([
     (0, typeorm_1.Entity)()
-], Shifts);
-exports.Shifts = Shifts;
+], Employees);
+exports.Employees = Employees;

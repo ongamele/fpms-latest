@@ -34,8 +34,9 @@ const Attendant13_1 = require("./ShiftsEntities/Attendant13");
 const Attendant14_1 = require("./ShiftsEntities/Attendant14");
 const Attendant15_1 = require("./ShiftsEntities/Attendant15");
 const Attendant16_1 = require("./ShiftsEntities/Attendant16");
-const Attendants_1 = require("./Entities/Attendants");
+const Employees_1 = require("./Entities/Employees");
 const Shifts_1 = require("./Entities/Shifts");
+const MonthRange_1 = require("./Entities/MonthRange");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, typeorm_1.createConnection)({
         type: 'mysql',
@@ -64,8 +65,9 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             Attendant14_1.Attendant14,
             Attendant15_1.Attendant15,
             Attendant16_1.Attendant16,
-            Attendants_1.Attendants,
+            Employees_1.Employees,
             Shifts_1.Shifts,
+            MonthRange_1.MonthRange,
         ],
     });
     const PORT = process.env.PORT || 3001;

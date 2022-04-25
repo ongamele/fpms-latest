@@ -35,24 +35,26 @@ import { GET_ATTENDANT13 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT14 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT15 } from './TimetableQueries/Attendant1';
 import { GET_ATTENDANT16 } from './TimetableQueries/Attendant1';
-import { UPDATE_ATTENDANT_START } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_END } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT1_PUMPS } from './TimetableMutations/Attendant1';
+import { UPDATE_EMPLOYEE_START } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_END } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_PUMPS } from './Mutations/Employees';
 import { UPDATE_ATTENDANT_DAY } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_CLOCKIN } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_CLOCKOUT } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_REASON } from './TimetableMutations/Attendant1';
-import { GET_ATTENDANT_TIMETABLE_DETAILS } from './TimetableQueries/Attendant1';
-import { UPDATE_ATTENDANT_ADJ } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_CODE } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_DUE_DATE } from './TimetableMutations/Attendant1';
-import { UPDATE_ATTENDANT_MIN } from './TimetableMutations/Attendant1';
-import { CREATE_ATTENDANT } from './Mutations/Attendants';
-import { CREATE_ATTENDANT_SHIFTS } from './Mutations/Shifts';
-import { LOGIN } from './Mutations/Attendants';
+import { UPDATE_EMPLOYEE_CLOCKIN } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_CLOCKOUT } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_REASON } from './Mutations/Employees';
+import { GET_EMPLOYEE_TIMETABLE_DETAILS } from './Queries/Employees';
+import { UPDATE_EMPLOYEE_ADJ } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_CODE } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_DUE_DATE } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_MIN } from './Mutations/Employees';
+import { CREATE_EMPLOYEE } from './Mutations/Employees';
+import { CREATE_SHIFTS } from './Mutations/Shifts';
+import { UPDATE_MONTH_RANGE } from './Mutations/MonthRange';
+import { UPDATE_DATE } from './Mutations/Shifts';
+//import { LOGIN } from './Mutations/Attendants';
 import { GET_SHIFTS } from './Queries/Shifts';
-import { GET_ATTENDANTS } from './Queries/Attendants';
-import { GET_ATTENDANT_TIMETABLE } from './Queries/Attendants';
+import { GET_EMPLOYEES } from './Queries/Employees';
+import { GET_MONTH_RANGE } from './Queries/MonthRange';
 const RootQuery = new GraphQLObjectType({
   name: 'RootQuery',
   fields: {
@@ -92,29 +94,31 @@ const RootQuery = new GraphQLObjectType({
     getAttendant14: GET_ATTENDANT14,
     getAttendant15: GET_ATTENDANT15,
     getAttendant16: GET_ATTENDANT16,
-    getAttendants: GET_ATTENDANTS,
+    getEmployees: GET_EMPLOYEES,
     getShifts: GET_SHIFTS,
-    getAttendantTimetable: GET_ATTENDANT_TIMETABLE,
-    getAttendantTimetableDetails: GET_ATTENDANT_TIMETABLE_DETAILS,
+    getEmployeeTimetableDetails: GET_EMPLOYEE_TIMETABLE_DETAILS,
+    getMonthRange: GET_MONTH_RANGE,
   },
 });
 
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    updateAttendantStart: UPDATE_ATTENDANT_START,
-    updateAttendantEnd: UPDATE_ATTENDANT_END,
-    updateAttendant1Pumps: UPDATE_ATTENDANT1_PUMPS,
-    updateAttendantClockIn: UPDATE_ATTENDANT_CLOCKIN,
-    updateAttendantClockOut: UPDATE_ATTENDANT_CLOCKOUT,
-    updateAttendantReason: UPDATE_ATTENDANT_REASON,
-    updateAttendantAdj: UPDATE_ATTENDANT_ADJ,
-    updateAttendantCode: UPDATE_ATTENDANT_CODE,
-    updateAttendantDueDate: UPDATE_ATTENDANT_DUE_DATE,
-    updateAttendantMin: UPDATE_ATTENDANT_MIN,
-    createAttendant: CREATE_ATTENDANT,
-    login: LOGIN,
-    createAttendantShifts: CREATE_ATTENDANT_SHIFTS,
+    updateEmployeeStart: UPDATE_EMPLOYEE_START,
+    updateEmployeeEnd: UPDATE_EMPLOYEE_END,
+    updateEmployeePumps: UPDATE_EMPLOYEE_PUMPS,
+    updateEmployeeClockIn: UPDATE_EMPLOYEE_CLOCKIN,
+    updateEmployeeClockOut: UPDATE_EMPLOYEE_CLOCKOUT,
+    updateEmployeeReason: UPDATE_EMPLOYEE_REASON,
+    updateEmployeeAdj: UPDATE_EMPLOYEE_ADJ,
+    updateEmployeeCode: UPDATE_EMPLOYEE_CODE,
+    updateEmployeeDueDate: UPDATE_EMPLOYEE_DUE_DATE,
+    updateEmployeeMin: UPDATE_EMPLOYEE_MIN,
+    createEmployee: CREATE_EMPLOYEE,
+    createShifts: CREATE_SHIFTS,
+    updateMonthRange: UPDATE_MONTH_RANGE,
+    updateDate: UPDATE_DATE,
+    //login: LOGIN,
     updateAttendantDay: UPDATE_ATTENDANT_DAY,
   },
 });

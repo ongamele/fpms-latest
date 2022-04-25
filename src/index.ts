@@ -21,8 +21,9 @@ import { Attendant13 } from './ShiftsEntities/Attendant13';
 import { Attendant14 } from './ShiftsEntities/Attendant14';
 import { Attendant15 } from './ShiftsEntities/Attendant15';
 import { Attendant16 } from './ShiftsEntities/Attendant16';
-import { Attendants } from './Entities/Attendants';
+import { Employees } from './Entities/Employees';
 import { Shifts } from './Entities/Shifts';
+import { MonthRange } from './Entities/MonthRange';
 
 const main = async () => {
   await createConnection({
@@ -52,8 +53,9 @@ const main = async () => {
       Attendant14,
       Attendant15,
       Attendant16,
-      Attendants,
+      Employees,
       Shifts,
+      MonthRange,
     ],
   });
 

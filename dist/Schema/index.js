@@ -38,24 +38,26 @@ const Attendant1_13 = require("./TimetableQueries/Attendant1");
 const Attendant1_14 = require("./TimetableQueries/Attendant1");
 const Attendant1_15 = require("./TimetableQueries/Attendant1");
 const Attendant1_16 = require("./TimetableQueries/Attendant1");
+const Employees_1 = require("./Mutations/Employees");
+const Employees_2 = require("./Mutations/Employees");
+const Employees_3 = require("./Mutations/Employees");
 const Attendant1_17 = require("./TimetableMutations/Attendant1");
-const Attendant1_18 = require("./TimetableMutations/Attendant1");
-const Attendant1_19 = require("./TimetableMutations/Attendant1");
-const Attendant1_20 = require("./TimetableMutations/Attendant1");
-const Attendant1_21 = require("./TimetableMutations/Attendant1");
-const Attendant1_22 = require("./TimetableMutations/Attendant1");
-const Attendant1_23 = require("./TimetableMutations/Attendant1");
-const Attendant1_24 = require("./TimetableQueries/Attendant1");
-const Attendant1_25 = require("./TimetableMutations/Attendant1");
-const Attendant1_26 = require("./TimetableMutations/Attendant1");
-const Attendant1_27 = require("./TimetableMutations/Attendant1");
-const Attendant1_28 = require("./TimetableMutations/Attendant1");
-const Attendants_1 = require("./Mutations/Attendants");
+const Employees_4 = require("./Mutations/Employees");
+const Employees_5 = require("./Mutations/Employees");
+const Employees_6 = require("./Mutations/Employees");
+const Employees_7 = require("./Queries/Employees");
+const Employees_8 = require("./Mutations/Employees");
+const Employees_9 = require("./Mutations/Employees");
+const Employees_10 = require("./Mutations/Employees");
+const Employees_11 = require("./Mutations/Employees");
+const Employees_12 = require("./Mutations/Employees");
 const Shifts_1 = require("./Mutations/Shifts");
-const Attendants_2 = require("./Mutations/Attendants");
-const Shifts_2 = require("./Queries/Shifts");
-const Attendants_3 = require("./Queries/Attendants");
-const Attendants_4 = require("./Queries/Attendants");
+const MonthRange_1 = require("./Mutations/MonthRange");
+const Shifts_2 = require("./Mutations/Shifts");
+//import { LOGIN } from './Mutations/Attendants';
+const Shifts_3 = require("./Queries/Shifts");
+const Employees_13 = require("./Queries/Employees");
+const MonthRange_2 = require("./Queries/MonthRange");
 const RootQuery = new graphql_1.GraphQLObjectType({
     name: 'RootQuery',
     fields: {
@@ -95,29 +97,31 @@ const RootQuery = new graphql_1.GraphQLObjectType({
         getAttendant14: Attendant1_14.GET_ATTENDANT14,
         getAttendant15: Attendant1_15.GET_ATTENDANT15,
         getAttendant16: Attendant1_16.GET_ATTENDANT16,
-        getAttendants: Attendants_3.GET_ATTENDANTS,
-        getShifts: Shifts_2.GET_SHIFTS,
-        getAttendantTimetable: Attendants_4.GET_ATTENDANT_TIMETABLE,
-        getAttendantTimetableDetails: Attendant1_24.GET_ATTENDANT_TIMETABLE_DETAILS,
+        getEmployees: Employees_13.GET_EMPLOYEES,
+        getShifts: Shifts_3.GET_SHIFTS,
+        getEmployeeTimetableDetails: Employees_7.GET_EMPLOYEE_TIMETABLE_DETAILS,
+        getMonthRange: MonthRange_2.GET_MONTH_RANGE,
     },
 });
 const Mutation = new graphql_1.GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        updateAttendantStart: Attendant1_17.UPDATE_ATTENDANT_START,
-        updateAttendantEnd: Attendant1_18.UPDATE_ATTENDANT_END,
-        updateAttendant1Pumps: Attendant1_19.UPDATE_ATTENDANT1_PUMPS,
-        updateAttendantClockIn: Attendant1_21.UPDATE_ATTENDANT_CLOCKIN,
-        updateAttendantClockOut: Attendant1_22.UPDATE_ATTENDANT_CLOCKOUT,
-        updateAttendantReason: Attendant1_23.UPDATE_ATTENDANT_REASON,
-        updateAttendantAdj: Attendant1_25.UPDATE_ATTENDANT_ADJ,
-        updateAttendantCode: Attendant1_26.UPDATE_ATTENDANT_CODE,
-        updateAttendantDueDate: Attendant1_27.UPDATE_ATTENDANT_DUE_DATE,
-        updateAttendantMin: Attendant1_28.UPDATE_ATTENDANT_MIN,
-        createAttendant: Attendants_1.CREATE_ATTENDANT,
-        login: Attendants_2.LOGIN,
-        createAttendantShifts: Shifts_1.CREATE_ATTENDANT_SHIFTS,
-        updateAttendantDay: Attendant1_20.UPDATE_ATTENDANT_DAY,
+        updateEmployeeStart: Employees_1.UPDATE_EMPLOYEE_START,
+        updateEmployeeEnd: Employees_2.UPDATE_EMPLOYEE_END,
+        updateEmployeePumps: Employees_3.UPDATE_EMPLOYEE_PUMPS,
+        updateEmployeeClockIn: Employees_4.UPDATE_EMPLOYEE_CLOCKIN,
+        updateEmployeeClockOut: Employees_5.UPDATE_EMPLOYEE_CLOCKOUT,
+        updateEmployeeReason: Employees_6.UPDATE_EMPLOYEE_REASON,
+        updateEmployeeAdj: Employees_8.UPDATE_EMPLOYEE_ADJ,
+        updateEmployeeCode: Employees_9.UPDATE_EMPLOYEE_CODE,
+        updateEmployeeDueDate: Employees_10.UPDATE_EMPLOYEE_DUE_DATE,
+        updateEmployeeMin: Employees_11.UPDATE_EMPLOYEE_MIN,
+        createEmployee: Employees_12.CREATE_EMPLOYEE,
+        createShifts: Shifts_1.CREATE_SHIFTS,
+        updateMonthRange: MonthRange_1.UPDATE_MONTH_RANGE,
+        updateDate: Shifts_2.UPDATE_DATE,
+        //login: LOGIN,
+        updateAttendantDay: Attendant1_17.UPDATE_ATTENDANT_DAY,
     },
 });
 exports.schema = new graphql_1.GraphQLSchema({

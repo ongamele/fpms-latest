@@ -9,22 +9,47 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CREATE_ATTENDANT_SHIFTS = void 0;
+exports.UPDATE_DATE = exports.CREATE_SHIFTS = void 0;
 const graphql_1 = require("graphql");
 const ShiftType_1 = require("../TypeDefs/ShiftType");
 const Shifts_1 = require("../../Entities/Shifts");
-exports.CREATE_ATTENDANT_SHIFTS = {
+exports.CREATE_SHIFTS = {
     type: ShiftType_1.ShiftType,
     args: {
-        AttendantID: { type: graphql_1.GraphQLString },
+        EmployeeID: { type: graphql_1.GraphQLInt },
     },
     resolve(parent, args) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { AttendantID } = args;
-            const shift = yield Shifts_1.Shifts.insert({
-                AttendantID,
-            });
-            return shift;
+            const { EmployeeID } = args;
+            for (var i = 31; i >= 1; i--) {
+                yield Shifts_1.Shifts.insert({
+                    EmployeeID,
+                    Shift_number: i,
+                });
+            }
+            return Shifts_1.Shifts.find();
+        });
+    },
+};
+exports.UPDATE_DATE = {
+    type: ShiftType_1.ShiftType,
+    args: {
+        MonthStart: { type: graphql_1.GraphQLString },
+        MonthEnd: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { MonthStart, MonthEnd } = args;
+            var mStart = new Date(MonthStart);
+            var mEnd = new Date(MonthEnd);
+            var Shift_number = 1;
+            // loop for every day
+            for (var dayDate = mStart; dayDate <= mEnd; dayDate.setDate(dayDate.getDate() + 1)) {
+                const date = dayDate.toISOString().substr(0, 10);
+                yield Shifts_1.Shifts.update({ Shift_number: Shift_number }, { Date: date });
+                Shift_number = Shift_number + 1;
+            }
+            return { successful: true, message: 'SHIFT UPDATED' };
         });
     },
 };

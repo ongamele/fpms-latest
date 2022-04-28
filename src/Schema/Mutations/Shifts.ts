@@ -45,3 +45,54 @@ export const UPDATE_DATE = {
     return { successful: true, message: 'SHIFT UPDATED' };
   },
 };
+
+export const CLEAR_TIMETABLE = {
+  type: ShiftType,
+  args: {
+    employeeID: { type: GraphQLInt },
+  },
+  async resolve(parent: any, args: any) {
+    const { employeeID } = args;
+
+    const employeeShift = await Shifts.find({
+      where: { EmployeeID: employeeID },
+    });
+
+    let start = '0';
+    let end = '0';
+    let clockIn = '0';
+    let clockOut = '0';
+    let pumps = '0';
+    let dueDate = '00-00-00';
+    let adj = '0';
+    let code = '0';
+    let min = '0';
+    let pay_hrs = '0';
+    let reason = '0';
+
+    var id = 0;
+
+    for (var i = 0; i <= employeeShift.length + 1; i++) {
+      id = employeeShift[i].ID;
+
+      await Shifts.update(id, {
+        Start: start,
+        End: end,
+        ClockIn: clockIn,
+        ClockOut: clockOut,
+        Pumps: pumps,
+        Due_date: dueDate,
+        Adj: adj,
+        Code: code,
+        Min: min,
+        Pay_hrs: pay_hrs,
+        Reason: reason,
+      });
+
+      if (i + 1 == employeeShift.length) {
+        // console.log('Not Completed');
+        return { ID: id };
+      }
+    }
+  },
+};

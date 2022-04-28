@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UPDATE_DATE = exports.CREATE_SHIFTS = void 0;
+exports.CLEAR_TIMETABLE = exports.UPDATE_DATE = exports.CREATE_SHIFTS = void 0;
 const graphql_1 = require("graphql");
 const ShiftType_1 = require("../TypeDefs/ShiftType");
 const Shifts_1 = require("../../Entities/Shifts");
@@ -50,6 +50,52 @@ exports.UPDATE_DATE = {
                 Shift_number = Shift_number + 1;
             }
             return { successful: true, message: 'SHIFT UPDATED' };
+        });
+    },
+};
+exports.CLEAR_TIMETABLE = {
+    type: ShiftType_1.ShiftType,
+    args: {
+        employeeID: { type: graphql_1.GraphQLInt },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { employeeID } = args;
+            const employeeShift = yield Shifts_1.Shifts.find({
+                where: { EmployeeID: employeeID },
+            });
+            let start = '0';
+            let end = '0';
+            let clockIn = '0';
+            let clockOut = '0';
+            let pumps = '0';
+            let dueDate = '00-00-00';
+            let adj = '0';
+            let code = '0';
+            let min = '0';
+            let pay_hrs = '0';
+            let reason = '0';
+            var id = 0;
+            for (var i = 0; i <= employeeShift.length + 1; i++) {
+                id = employeeShift[i].ID;
+                yield Shifts_1.Shifts.update(id, {
+                    Start: start,
+                    End: end,
+                    ClockIn: clockIn,
+                    ClockOut: clockOut,
+                    Pumps: pumps,
+                    Due_date: dueDate,
+                    Adj: adj,
+                    Code: code,
+                    Min: min,
+                    Pay_hrs: pay_hrs,
+                    Reason: reason,
+                });
+                if (i + 1 == employeeShift.length) {
+                    // console.log('Not Completed');
+                    return { ID: id };
+                }
+            }
         });
     },
 };

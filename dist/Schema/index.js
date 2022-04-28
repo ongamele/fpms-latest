@@ -54,8 +54,9 @@ const Employees_12 = require("./Mutations/Employees");
 const Shifts_1 = require("./Mutations/Shifts");
 const MonthRange_1 = require("./Mutations/MonthRange");
 const Shifts_2 = require("./Mutations/Shifts");
+const Shifts_3 = require("./Mutations/Shifts");
 //import { LOGIN } from './Mutations/Attendants';
-const Shifts_3 = require("./Queries/Shifts");
+const Shifts_4 = require("./Queries/Shifts");
 const Employees_13 = require("./Queries/Employees");
 const MonthRange_2 = require("./Queries/MonthRange");
 const RootQuery = new graphql_1.GraphQLObjectType({
@@ -98,7 +99,7 @@ const RootQuery = new graphql_1.GraphQLObjectType({
         getAttendant15: Attendant1_15.GET_ATTENDANT15,
         getAttendant16: Attendant1_16.GET_ATTENDANT16,
         getEmployees: Employees_13.GET_EMPLOYEES,
-        getShifts: Shifts_3.GET_SHIFTS,
+        getShifts: Shifts_4.GET_SHIFTS,
         getEmployeeTimetableDetails: Employees_7.GET_EMPLOYEE_TIMETABLE_DETAILS,
         getMonthRange: MonthRange_2.GET_MONTH_RANGE,
     },
@@ -122,6 +123,7 @@ const Mutation = new graphql_1.GraphQLObjectType({
         updateDate: Shifts_2.UPDATE_DATE,
         //login: LOGIN,
         updateAttendantDay: Attendant1_17.UPDATE_ATTENDANT_DAY,
+        clearTimetable: Shifts_3.CLEAR_TIMETABLE,
     },
 });
 exports.schema = new graphql_1.GraphQLSchema({

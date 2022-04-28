@@ -51,6 +51,7 @@ import { CREATE_EMPLOYEE } from './Mutations/Employees';
 import { CREATE_SHIFTS } from './Mutations/Shifts';
 import { UPDATE_MONTH_RANGE } from './Mutations/MonthRange';
 import { UPDATE_DATE } from './Mutations/Shifts';
+import { CLEAR_TIMETABLE } from './Mutations/Shifts';
 //import { LOGIN } from './Mutations/Attendants';
 import { GET_SHIFTS } from './Queries/Shifts';
 import { GET_EMPLOYEES } from './Queries/Employees';
@@ -120,6 +121,7 @@ const Mutation = new GraphQLObjectType({
     updateDate: UPDATE_DATE,
     //login: LOGIN,
     updateAttendantDay: UPDATE_ATTENDANT_DAY,
+    clearTimetable: CLEAR_TIMETABLE,
   },
 });
 

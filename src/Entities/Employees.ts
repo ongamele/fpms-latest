@@ -47,6 +47,48 @@ export class Employees extends BaseEntity {
   @Column()
   Answer!: string;
 
+  @Column()
+  ShoeSize!: number;
+
+  @Column()
+  TShirtSize!: string;
+
+  @Column()
+  JacketSize!: string;
+
+  @Column()
+  PantsSize!: number;
+
+  @Column()
+  Bank!: string;
+
+  @Column()
+  AccountNumber!: number;
+
+  @Column()
+  AccountType!: string;
+
+  @Column()
+  BranchCode!: string;
+
+  @Column()
+  StreetNumber!: string;
+
+  @Column()
+  StreetName!: string;
+
+  @Column()
+  Suburb!: string;
+
+  @Column()
+  City!: string;
+
+  @Column()
+  Code!: string;
+
+  @Column()
+  TaxNumber!: string;
+
   @OneToMany(() => Shifts, (shifts: Shifts) => shifts.employees) // specify inverse side as a second parameter
   shifts: Shifts;
 }

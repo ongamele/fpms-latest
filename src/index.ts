@@ -5,25 +5,18 @@ import cors from 'cors';
 import { createConnection } from 'typeorm';
 
 //Time Table Entities
-import { Attendant1 } from './ShiftsEntities/Attendant1';
-import { Attendant2 } from './ShiftsEntities/Attendant2';
-import { Attendant3 } from './ShiftsEntities/Attendant3';
-import { Attendant4 } from './ShiftsEntities/Attendant4';
-import { Attendant5 } from './ShiftsEntities/Attendant5';
-import { Attendant6 } from './ShiftsEntities/Attendant6';
-import { Attendant7 } from './ShiftsEntities/Attendant7';
-import { Attendant8 } from './ShiftsEntities/Attendant8';
-import { Attendant9 } from './ShiftsEntities/Attendant9';
-import { Attendant10 } from './ShiftsEntities/Attendant10';
-import { Attendant11 } from './ShiftsEntities/Attendant11';
-import { Attendant12 } from './ShiftsEntities/Attendant12';
-import { Attendant13 } from './ShiftsEntities/Attendant13';
-import { Attendant14 } from './ShiftsEntities/Attendant14';
-import { Attendant15 } from './ShiftsEntities/Attendant15';
-import { Attendant16 } from './ShiftsEntities/Attendant16';
 import { Employees } from './Entities/Employees';
 import { Shifts } from './Entities/Shifts';
 import { MonthRange } from './Entities/MonthRange';
+import { WetstockMonthRange } from './Entities/WetstockMonthRange';
+import { Pumps } from './Entities/Pumps';
+import { Unleaded93 } from './Entities/Unleaded93';
+import { Unleaded95 } from './Entities/Unleaded95';
+import { Diesel10 } from './Entities/Diesel10';
+import { Tanks } from './Entities/Tanks';
+import { Unleaded93Tank } from './Entities/Unleaded93Tank';
+import { Unleaded95Tank } from './Entities/Unleaded95Tank';
+import { Diesel10Tank } from './Entities/Diesel10Tank';
 
 const main = async () => {
   await createConnection({
@@ -37,25 +30,18 @@ const main = async () => {
     synchronize: false,
     insecureAuth: true,
     entities: [
-      Attendant1,
-      Attendant2,
-      Attendant3,
-      Attendant4,
-      Attendant5,
-      Attendant6,
-      Attendant7,
-      Attendant8,
-      Attendant9,
-      Attendant10,
-      Attendant11,
-      Attendant12,
-      Attendant13,
-      Attendant14,
-      Attendant15,
-      Attendant16,
       Employees,
       Shifts,
       MonthRange,
+      WetstockMonthRange,
+      Pumps,
+      Unleaded93,
+      Unleaded95,
+      Diesel10,
+      Tanks,
+      Unleaded93Tank,
+      Unleaded95Tank,
+      Diesel10Tank,
     ],
   });
 

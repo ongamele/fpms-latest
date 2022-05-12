@@ -233,6 +233,33 @@ export const UPDATE_EMPLOYEE_MIN = {
   },
 };
 
+export const UPDATE_EMPLOYEE_TEA = {
+  type: Timetable,
+  args: {
+    id: { type: GraphQLID },
+    tea: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { id, tea } = args;
+
+    await Shifts.update(id, { Tea: tea });
+    return { successful: true, message: 'SHIFT UPDATED' };
+  },
+};
+
+export const DELETE_EMPLOYEE = {
+  type: EmployeeType,
+  args: {
+    EmployeeID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { EmployeeID } = args;
+
+    await Employees.delete(EmployeeID);
+    return { successful: true, message: 'DELETE WORKED' };
+  },
+};
+
 /*export const LOGIN = {
   type: AttendantType,
   args: {

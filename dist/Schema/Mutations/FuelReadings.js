@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UPDATE_WETSTOCK_DATE = exports.UPDATE_DIESEL_10_READINGS = exports.UPDATE_UNLEADED_95_READINGS = exports.UPDATE_UNLEADED_93_READINGS = exports.CREATE_FUEL_READINGS = void 0;
+exports.DELETE_DIESEL_10 = exports.DELETE_UNLEADED_95 = exports.DELETE_UNLEADED_93 = exports.UPDATE_WETSTOCK_DATE = exports.UPDATE_DIESEL_10_READINGS = exports.UPDATE_UNLEADED_95_READINGS = exports.UPDATE_UNLEADED_93_READINGS = exports.CREATE_FUEL_READINGS = void 0;
 const graphql_1 = require("graphql");
 const FuelType_1 = require("../TypeDefs/FuelType");
 const Unleaded93_1 = require("../../Entities/Unleaded93");
@@ -104,6 +104,72 @@ exports.UPDATE_WETSTOCK_DATE = {
                 number = number + 1;
             }
             return { successful: true, message: 'WET STOCK UPDATED' };
+        });
+    },
+};
+exports.DELETE_UNLEADED_93 = {
+    type: FuelType_1.FuelType,
+    args: {
+        PumpID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { PumpID } = args;
+            const unleaded93 = yield Unleaded93_1.Unleaded93.find({
+                where: { PumpID: PumpID },
+            });
+            for (var i = 0; i <= unleaded93.length + 1; i++) {
+                let id = unleaded93[i].ID;
+                yield Unleaded93_1.Unleaded93.delete(id);
+                if (i + 1 == unleaded93.length) {
+                    // console.log('Not Completed');
+                    return { PumpID: id };
+                }
+            }
+        });
+    },
+};
+exports.DELETE_UNLEADED_95 = {
+    type: FuelType_1.FuelType,
+    args: {
+        PumpID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { PumpID } = args;
+            const unleaded95 = yield Unleaded95_1.Unleaded95.find({
+                where: { PumpID: PumpID },
+            });
+            for (var i = 0; i <= unleaded95.length + 1; i++) {
+                let id = unleaded95[i].ID;
+                yield Unleaded95_1.Unleaded95.delete(id);
+                if (i + 1 == unleaded95.length) {
+                    // console.log('Not Completed');
+                    return { PumpID: id };
+                }
+            }
+        });
+    },
+};
+exports.DELETE_DIESEL_10 = {
+    type: FuelType_1.FuelType,
+    args: {
+        PumpID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { PumpID } = args;
+            const diesel10 = yield Diesel10_1.Diesel10.find({
+                where: { PumpID: PumpID },
+            });
+            for (var i = 0; i <= diesel10.length + 1; i++) {
+                let id = diesel10[i].ID;
+                yield Diesel10_1.Diesel10.delete(id);
+                if (i + 1 == diesel10.length) {
+                    // console.log('Not Completed');
+                    return { PumpID: id };
+                }
+            }
         });
     },
 };

@@ -50,6 +50,9 @@ export class Shifts extends BaseEntity {
   Min!: string;
 
   @Column()
+  Tea!: string;
+
+  @Column()
   Adj!: string;
 
   @Column()

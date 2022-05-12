@@ -9,35 +9,36 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DELETE_PUMP = exports.CREATE_PUMP = void 0;
+exports.CREATE_LEAVE = void 0;
 const graphql_1 = require("graphql");
-const PumpsType_1 = require("../TypeDefs/PumpsType");
-const Pumps_1 = require("../../Entities/Pumps");
-exports.CREATE_PUMP = {
-    type: PumpsType_1.PumpsType,
+const LeaveType_1 = require("../TypeDefs/LeaveType");
+const Leaves_1 = require("../../Entities/Leaves");
+exports.CREATE_LEAVE = {
+    type: LeaveType_1.LeaveType,
     args: {
-        PumpName: { type: graphql_1.GraphQLString },
+        EmployeeID: { type: graphql_1.GraphQLString },
+        Date: { type: graphql_1.GraphQLString },
+        ShiftID: { type: graphql_1.GraphQLInt },
     },
     resolve(parent, args) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { PumpName } = args;
-            const pump = yield Pumps_1.Pumps.insert({
-                PumpID: PumpName,
+            const { EmployeeID, Date, ShiftID } = args;
+            const existLeave = yield Leaves_1.Leaves.find({
+                where: { ShiftID: ShiftID },
             });
-            return pump;
-        });
-    },
-};
-exports.DELETE_PUMP = {
-    type: PumpsType_1.PumpsType,
-    args: {
-        PumpID: { type: graphql_1.GraphQLString },
-    },
-    resolve(parent, args) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { PumpID } = args;
-            yield Pumps_1.Pumps.delete(PumpID);
-            return { successful: true, message: 'DELETE WORKED' };
+            if (existLeave.length == 0) {
+                console.log('No shift found');
+                const leave = yield Leaves_1.Leaves.insert({
+                    EmployeeID,
+                    Date,
+                    ShiftID,
+                });
+                return leave;
+            }
+            else {
+                console.log('Shift Already Exists!');
+                return null;
+            }
         });
     },
 };

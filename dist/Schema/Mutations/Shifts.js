@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CLEAR_TIMETABLE = exports.UPDATE_DATE = exports.CREATE_SHIFTS = void 0;
+exports.DELETE_SHIFTS = exports.CLEAR_TIMETABLE = exports.UPDATE_DATE = exports.CREATE_SHIFTS = void 0;
 const graphql_1 = require("graphql");
 const ShiftType_1 = require("../TypeDefs/ShiftType");
 const Shifts_1 = require("../../Entities/Shifts");
@@ -91,6 +91,28 @@ exports.CLEAR_TIMETABLE = {
                     Pay_hrs: pay_hrs,
                     Reason: reason,
                 });
+                if (i + 1 == employeeShift.length) {
+                    // console.log('Not Completed');
+                    return { ID: id };
+                }
+            }
+        });
+    },
+};
+exports.DELETE_SHIFTS = {
+    type: ShiftType_1.ShiftType,
+    args: {
+        EmployeeID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { EmployeeID } = args;
+            const employeeShift = yield Shifts_1.Shifts.find({
+                where: { EmployeeID: EmployeeID },
+            });
+            for (var i = 0; i <= employeeShift.length + 1; i++) {
+                let id = employeeShift[i].ID;
+                yield Shifts_1.Shifts.delete(id);
                 if (i + 1 == employeeShift.length) {
                     // console.log('Not Completed');
                     return { ID: id };

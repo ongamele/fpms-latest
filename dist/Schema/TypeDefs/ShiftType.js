@@ -15,6 +15,7 @@ exports.ShiftType = new graphql_1.GraphQLObjectType({
         ClockIn: { type: graphql_1.GraphQLString },
         ClockOut: { type: graphql_1.GraphQLString },
         Min: { type: graphql_1.GraphQLString },
+        Tea: { type: graphql_1.GraphQLString },
         Reason: { type: graphql_1.GraphQLString },
         Adj: { type: graphql_1.GraphQLString },
         Code: { type: graphql_1.GraphQLString },

@@ -16,3 +16,16 @@ export const CREATE_TANK = {
     return tank;
   },
 };
+
+export const DELETE_TANK = {
+  type: TankType,
+  args: {
+    TankID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { TankID } = args;
+
+    await Tanks.delete(TankID);
+    return { successful: true, message: 'DELETE WORKED' };
+  },
+};

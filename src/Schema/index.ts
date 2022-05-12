@@ -16,8 +16,11 @@ import { UPDATE_EMPLOYEE_ADJ } from './Mutations/Employees';
 import { UPDATE_EMPLOYEE_CODE } from './Mutations/Employees';
 import { UPDATE_EMPLOYEE_DUE_DATE } from './Mutations/Employees';
 import { UPDATE_EMPLOYEE_MIN } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE_TEA } from './Mutations/Employees';
 import { CREATE_EMPLOYEE } from './Mutations/Employees';
+import { DELETE_EMPLOYEE } from './Mutations/Employees';
 import { CREATE_SHIFTS } from './Mutations/Shifts';
+import { DELETE_SHIFTS } from './Mutations/Shifts';
 import { UPDATE_MONTH_RANGE } from './Mutations/MonthRange';
 import { UPDATE_WETSTOCK_MONTH_RANGE } from './Mutations/MonthRange';
 import { UPDATE_DATE } from './Mutations/Shifts';
@@ -29,6 +32,8 @@ import { GET_EMPLOYEES } from './Queries/Employees';
 import { GET_MONTH_RANGE } from './Queries/MonthRange';
 import { GET_WETSTOCK_MONTH_RANGE } from './Queries/MonthRange';
 import { GET_PUMPS } from './Queries/Pumps';
+import { GET_ALL_PUMPS } from './Queries/Pumps';
+import { DELETE_PUMP } from './Mutations/Pumps';
 import { UPDATE_UNLEADED_93_READINGS } from './Mutations/FuelReadings';
 import { UPDATE_UNLEADED_95_READINGS } from './Mutations/FuelReadings';
 import { UPDATE_DIESEL_10_READINGS } from './Mutations/FuelReadings';
@@ -40,6 +45,18 @@ import { UPDATE_UNLEADED_95_TANK_READINGS } from './Mutations/TankReadings';
 import { UPDATE_DIESEL_10_TANK_READINGS } from './Mutations/TankReadings';
 import { UPDATE_TANK_DATE } from './Mutations/TankReadings';
 import { GET_TANKS } from './Queries/Tanks';
+import { GET_ALL_TANKS } from './Queries/Tanks';
+import { DELETE_TANK } from './Mutations/Tanks';
+import { CREATE_LEAVE } from './Mutations/Leave';
+import { GET_EMPLOYEE_LEAVE } from './Queries/Leave';
+
+import { DELETE_UNLEADED_93 } from './Mutations/FuelReadings';
+import { DELETE_UNLEADED_95 } from './Mutations/FuelReadings';
+import { DELETE_DIESEL_10 } from './Mutations/FuelReadings';
+
+import { DELETE_UNLEADED_93_TANK } from './Mutations/TankReadings';
+import { DELETE_UNLEADED_95_TANK } from './Mutations/TankReadings';
+import { DELETE_DIESEL_10_TANK } from './Mutations/TankReadings';
 const RootQuery = new GraphQLObjectType({
   name: 'RootQuery',
   fields: {
@@ -53,7 +70,10 @@ const RootQuery = new GraphQLObjectType({
     getMonthRange: GET_MONTH_RANGE,
     getWetstockMonthRange: GET_WETSTOCK_MONTH_RANGE,
     getPumps: GET_PUMPS,
+    getAllPumps: GET_ALL_PUMPS,
     getTanks: GET_TANKS,
+    getAllTanks: GET_ALL_TANKS,
+    getEmployeeLeave: GET_EMPLOYEE_LEAVE,
   },
 });
 
@@ -70,6 +90,7 @@ const Mutation = new GraphQLObjectType({
     updateEmployeeCode: UPDATE_EMPLOYEE_CODE,
     updateEmployeeDueDate: UPDATE_EMPLOYEE_DUE_DATE,
     updateEmployeeMin: UPDATE_EMPLOYEE_MIN,
+    updateEmployeeTea: UPDATE_EMPLOYEE_TEA,
     createEmployee: CREATE_EMPLOYEE,
     createShifts: CREATE_SHIFTS,
     updateMonthRange: UPDATE_MONTH_RANGE,
@@ -88,7 +109,18 @@ const Mutation = new GraphQLObjectType({
     updateUnleaded93TankReadings: UPDATE_UNLEADED_93_TANK_READINGS,
     updateUnleaded95TankReadings: UPDATE_UNLEADED_95_TANK_READINGS,
     updateDiesel10TankReadings: UPDATE_DIESEL_10_TANK_READINGS,
+    deleteTank: DELETE_TANK,
+    deleteUnleaded93Tank: DELETE_UNLEADED_93_TANK,
+    deleteUnleaded95Tank: DELETE_UNLEADED_95_TANK,
+    deleteDiesel10Tank: DELETE_DIESEL_10_TANK,
+    deletePump: DELETE_PUMP,
+    deleteUnleaded93: DELETE_UNLEADED_93,
+    deleteUnleaded95: DELETE_UNLEADED_95,
+    deleteDiesel10: DELETE_DIESEL_10,
     updateTankDate: UPDATE_TANK_DATE,
+    deleteEmployee: DELETE_EMPLOYEE,
+    deleteShifts: DELETE_SHIFTS,
+    createLeave: CREATE_LEAVE,
   },
 });
 

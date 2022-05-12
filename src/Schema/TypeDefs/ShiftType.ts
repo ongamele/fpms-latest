@@ -13,6 +13,7 @@ export const ShiftType = new GraphQLObjectType({
     ClockIn: { type: GraphQLString },
     ClockOut: { type: GraphQLString },
     Min: { type: GraphQLString },
+    Tea: { type: GraphQLString },
     Reason: { type: GraphQLString },
     Adj: { type: GraphQLString },
     Code: { type: GraphQLString },

@@ -20,6 +20,7 @@ export const Timetable = new GraphQLObjectType({
     ClockOut: { type: GraphQLString },
     Pumps: { type: GraphQLString },
     Min: { type: GraphQLString },
+    Tea: { type: GraphQLString },
     Reason: { type: GraphQLString },
     Adj: { type: GraphQLString },
     Code: { type: GraphQLString },

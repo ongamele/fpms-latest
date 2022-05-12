@@ -106,3 +106,78 @@ export const UPDATE_TANK_DATE = {
     return { successful: true, message: 'WET STOCK UPDATED' };
   },
 };
+
+export const DELETE_UNLEADED_93_TANK = {
+  type: TankFuelType,
+  args: {
+    TankID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { TankID } = args;
+
+    const unleaded93Tank = await Unleaded93Tank.find({
+      where: { TankID: TankID },
+    });
+
+    for (var i = 0; i <= unleaded93Tank.length + 1; i++) {
+      let id = unleaded93Tank[i].ID;
+
+      await Unleaded93Tank.delete(id);
+
+      if (i + 1 == unleaded93Tank.length) {
+        // console.log('Not Completed');
+        return { TankID: id };
+      }
+    }
+  },
+};
+
+export const DELETE_UNLEADED_95_TANK = {
+  type: TankFuelType,
+  args: {
+    TankID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { TankID } = args;
+
+    const unleaded95Tank = await Unleaded95Tank.find({
+      where: { TankID: TankID },
+    });
+
+    for (var i = 0; i <= unleaded95Tank.length + 1; i++) {
+      let id = unleaded95Tank[i].ID;
+
+      await Unleaded95Tank.delete(id);
+
+      if (i + 1 == unleaded95Tank.length) {
+        // console.log('Not Completed');
+        return { TankID: id };
+      }
+    }
+  },
+};
+
+export const DELETE_DIESEL_10_TANK = {
+  type: TankFuelType,
+  args: {
+    TankID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { TankID } = args;
+
+    const diesel10Tank = await Diesel10Tank.find({
+      where: { TankID: TankID },
+    });
+
+    for (var i = 0; i <= diesel10Tank.length + 1; i++) {
+      let id = diesel10Tank[i].ID;
+
+      await Diesel10Tank.delete(id);
+
+      if (i + 1 == diesel10Tank.length) {
+        // console.log('Not Completed');
+        return { TankID: id };
+      }
+    }
+  },
+};

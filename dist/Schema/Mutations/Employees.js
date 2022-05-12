@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UPDATE_EMPLOYEE_MIN = exports.UPDATE_EMPLOYEE_DUE_DATE = exports.UPDATE_EMPLOYEE_CODE = exports.UPDATE_EMPLOYEE_ADJ = exports.UPDATE_EMPLOYEE_REASON = exports.UPDATE_EMPLOYEE_CLOCKOUT = exports.UPDATE_EMPLOYEE_CLOCKIN = exports.UPDATE_EMPLOYEE_PUMPS = exports.UPDATE_EMPLOYEE_END = exports.UPDATE_EMPLOYEE_START = exports.CREATE_EMPLOYEE = void 0;
+exports.DELETE_EMPLOYEE = exports.UPDATE_EMPLOYEE_TEA = exports.UPDATE_EMPLOYEE_MIN = exports.UPDATE_EMPLOYEE_DUE_DATE = exports.UPDATE_EMPLOYEE_CODE = exports.UPDATE_EMPLOYEE_ADJ = exports.UPDATE_EMPLOYEE_REASON = exports.UPDATE_EMPLOYEE_CLOCKOUT = exports.UPDATE_EMPLOYEE_CLOCKIN = exports.UPDATE_EMPLOYEE_PUMPS = exports.UPDATE_EMPLOYEE_END = exports.UPDATE_EMPLOYEE_START = exports.CREATE_EMPLOYEE = void 0;
 const graphql_1 = require("graphql");
 const EmployeeType_1 = require("../TypeDefs/EmployeeType");
 const Timetable_1 = require("../TypeDefs/Timetable");
@@ -218,6 +218,33 @@ exports.UPDATE_EMPLOYEE_MIN = {
             const { id, min } = args;
             yield Shifts_1.Shifts.update(id, { Min: min });
             return { successful: true, message: 'SHIFT UPDATED' };
+        });
+    },
+};
+exports.UPDATE_EMPLOYEE_TEA = {
+    type: Timetable_1.Timetable,
+    args: {
+        id: { type: graphql_1.GraphQLID },
+        tea: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id, tea } = args;
+            yield Shifts_1.Shifts.update(id, { Tea: tea });
+            return { successful: true, message: 'SHIFT UPDATED' };
+        });
+    },
+};
+exports.DELETE_EMPLOYEE = {
+    type: EmployeeType_1.EmployeeType,
+    args: {
+        EmployeeID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { EmployeeID } = args;
+            yield Employees_1.Employees.delete(EmployeeID);
+            return { successful: true, message: 'DELETE WORKED' };
         });
     },
 };

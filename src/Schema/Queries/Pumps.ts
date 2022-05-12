@@ -15,3 +15,11 @@ export const GET_PUMPS = {
     return pumps;
   },
 };
+
+export const GET_ALL_PUMPS = {
+  type: new GraphQLList(PumpsType),
+  async resolve() {
+    const pumps = await Pumps.find();
+    return pumps;
+  },
+};

@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CREATE_TANK = void 0;
+exports.DELETE_TANK = exports.CREATE_TANK = void 0;
 const graphql_1 = require("graphql");
 const TankType_1 = require("../TypeDefs/TankType");
 const Tanks_1 = require("../../Entities/Tanks");
@@ -25,6 +25,19 @@ exports.CREATE_TANK = {
                 TankID: TankName,
             });
             return tank;
+        });
+    },
+};
+exports.DELETE_TANK = {
+    type: TankType_1.TankType,
+    args: {
+        TankID: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { TankID } = args;
+            yield Tanks_1.Tanks.delete(TankID);
+            return { successful: true, message: 'DELETE WORKED' };
         });
     },
 };

@@ -13,3 +13,11 @@ export const GET_TANKS = {
     return tanks;
   },
 };
+
+export const GET_ALL_TANKS = {
+  type: new GraphQLList(TankType),
+  async resolve() {
+    const tanks = await Tanks.find();
+    return tanks;
+  },
+};

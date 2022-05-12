@@ -96,3 +96,28 @@ export const CLEAR_TIMETABLE = {
     }
   },
 };
+
+export const DELETE_SHIFTS = {
+  type: ShiftType,
+  args: {
+    EmployeeID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { EmployeeID } = args;
+
+    const employeeShift = await Shifts.find({
+      where: { EmployeeID: EmployeeID },
+    });
+
+    for (var i = 0; i <= employeeShift.length + 1; i++) {
+      let id = employeeShift[i].ID;
+
+      await Shifts.delete(id);
+
+      if (i + 1 == employeeShift.length) {
+        // console.log('Not Completed');
+        return { ID: id };
+      }
+    }
+  },
+};

@@ -69,6 +69,10 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
+], Shifts.prototype, "Tea", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
 ], Shifts.prototype, "Adj", void 0);
 __decorate([
     (0, typeorm_1.Column)(),

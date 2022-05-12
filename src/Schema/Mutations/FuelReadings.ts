@@ -102,3 +102,78 @@ export const UPDATE_WETSTOCK_DATE = {
     return { successful: true, message: 'WET STOCK UPDATED' };
   },
 };
+
+export const DELETE_UNLEADED_93 = {
+  type: FuelType,
+  args: {
+    PumpID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { PumpID } = args;
+
+    const unleaded93 = await Unleaded93.find({
+      where: { PumpID: PumpID },
+    });
+
+    for (var i = 0; i <= unleaded93.length + 1; i++) {
+      let id = unleaded93[i].ID;
+
+      await Unleaded93.delete(id);
+
+      if (i + 1 == unleaded93.length) {
+        // console.log('Not Completed');
+        return { PumpID: id };
+      }
+    }
+  },
+};
+
+export const DELETE_UNLEADED_95 = {
+  type: FuelType,
+  args: {
+    PumpID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { PumpID } = args;
+
+    const unleaded95 = await Unleaded95.find({
+      where: { PumpID: PumpID },
+    });
+
+    for (var i = 0; i <= unleaded95.length + 1; i++) {
+      let id = unleaded95[i].ID;
+
+      await Unleaded95.delete(id);
+
+      if (i + 1 == unleaded95.length) {
+        // console.log('Not Completed');
+        return { PumpID: id };
+      }
+    }
+  },
+};
+
+export const DELETE_DIESEL_10 = {
+  type: FuelType,
+  args: {
+    PumpID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { PumpID } = args;
+
+    const diesel10 = await Diesel10.find({
+      where: { PumpID: PumpID },
+    });
+
+    for (var i = 0; i <= diesel10.length + 1; i++) {
+      let id = diesel10[i].ID;
+
+      await Diesel10.delete(id);
+
+      if (i + 1 == diesel10.length) {
+        // console.log('Not Completed');
+        return { PumpID: id };
+      }
+    }
+  },
+};

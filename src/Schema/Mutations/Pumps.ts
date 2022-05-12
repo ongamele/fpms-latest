@@ -16,3 +16,16 @@ export const CREATE_PUMP = {
     return pump;
   },
 };
+
+export const DELETE_PUMP = {
+  type: PumpsType,
+  args: {
+    PumpID: { type: GraphQLString },
+  },
+  async resolve(parent: any, args: any) {
+    const { PumpID } = args;
+
+    await Pumps.delete(PumpID);
+    return { successful: true, message: 'DELETE WORKED' };
+  },
+};

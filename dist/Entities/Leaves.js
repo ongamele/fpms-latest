@@ -9,39 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PA4 = void 0;
+exports.Leaves = void 0;
 const typeorm_1 = require("typeorm");
-let PA4 = class PA4 extends typeorm_1.BaseEntity {
+let Leaves = class Leaves extends typeorm_1.BaseEntity {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], PA4.prototype, "UniqueID", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], PA4.prototype, "FirstName", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], PA4.prototype, "LastName", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], PA4.prototype, "TagID", void 0);
+], Leaves.prototype, "ID", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
-], PA4.prototype, "Average_Response_Time", void 0);
+], Leaves.prototype, "EmployeeID", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Leaves.prototype, "Date", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Leaves.prototype, "Leave", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
-], PA4.prototype, "TRX_Today", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], PA4.prototype, "WorkHour_Today", void 0);
-PA4 = __decorate([
+], Leaves.prototype, "ShiftID", void 0);
+Leaves = __decorate([
     (0, typeorm_1.Entity)()
-], PA4);
-exports.PA4 = PA4;
+], Leaves);
+exports.Leaves = Leaves;

@@ -17,6 +17,7 @@ import { Tanks } from './Entities/Tanks';
 import { Unleaded93Tank } from './Entities/Unleaded93Tank';
 import { Unleaded95Tank } from './Entities/Unleaded95Tank';
 import { Diesel10Tank } from './Entities/Diesel10Tank';
+import { Leaves } from './Entities/Leaves';
 
 const main = async () => {
   await createConnection({
@@ -30,7 +31,7 @@ const main = async () => {
     synchronize: false,
     insecureAuth: true,
     entities: [
-      Employees,
+       Employees,
       Shifts,
       MonthRange,
       WetstockMonthRange,
@@ -42,6 +43,7 @@ const main = async () => {
       Unleaded93Tank,
       Unleaded95Tank,
       Diesel10Tank,
+      Leaves,
     ],
   });
 

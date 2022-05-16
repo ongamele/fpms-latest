@@ -30,6 +30,7 @@ const Tanks_1 = require("./Entities/Tanks");
 const Unleaded93Tank_1 = require("./Entities/Unleaded93Tank");
 const Unleaded95Tank_1 = require("./Entities/Unleaded95Tank");
 const Diesel10Tank_1 = require("./Entities/Diesel10Tank");
+const Leaves_1 = require("./Entities/Leaves");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, typeorm_1.createConnection)({
         type: 'mysql',
@@ -54,6 +55,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             Unleaded93Tank_1.Unleaded93Tank,
             Unleaded95Tank_1.Unleaded95Tank,
             Diesel10Tank_1.Diesel10Tank,
+            Leaves_1.Leaves,
         ],
     });
     const PORT = process.env.PORT || 3001;

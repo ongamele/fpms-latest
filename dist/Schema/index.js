@@ -20,6 +20,7 @@ const Employees_11 = require("./Mutations/Employees");
 const Employees_12 = require("./Mutations/Employees");
 const Employees_13 = require("./Mutations/Employees");
 const Employees_14 = require("./Mutations/Employees");
+const Employees_15 = require("./Mutations/Employees");
 const Shifts_1 = require("./Mutations/Shifts");
 const Shifts_2 = require("./Mutations/Shifts");
 const MonthRange_1 = require("./Mutations/MonthRange");
@@ -29,7 +30,7 @@ const Shifts_4 = require("./Mutations/Shifts");
 const Pumps_1 = require("./Mutations/Pumps");
 const FuelReadings_1 = require("./Mutations/FuelReadings");
 const Shifts_5 = require("./Queries/Shifts");
-const Employees_15 = require("./Queries/Employees");
+const Employees_16 = require("./Queries/Employees");
 const MonthRange_3 = require("./Queries/MonthRange");
 const MonthRange_4 = require("./Queries/MonthRange");
 const Pumps_2 = require("./Queries/Pumps");
@@ -63,7 +64,7 @@ const RootQuery = new graphql_1.GraphQLObjectType({
         getJournal: Journal_1.GET_JOURNAL,
         getAllConstants: Constants_1.GET_ALL_CONSTANTS,
         getGeneral: General_1.GET_GENERAL,
-        getEmployees: Employees_15.GET_EMPLOYEES,
+        getEmployees: Employees_16.GET_EMPLOYEES,
         getShifts: Shifts_5.GET_SHIFTS,
         getEmployeeTimetableDetails: Employees_7.GET_EMPLOYEE_TIMETABLE_DETAILS,
         getMonthRange: MonthRange_3.GET_MONTH_RANGE,
@@ -90,6 +91,7 @@ const Mutation = new graphql_1.GraphQLObjectType({
         updateEmployeeMin: Employees_11.UPDATE_EMPLOYEE_MIN,
         updateEmployeeTea: Employees_12.UPDATE_EMPLOYEE_TEA,
         createEmployee: Employees_13.CREATE_EMPLOYEE,
+        updateEmployee: Employees_15.UPDATE_EMPLOYEE,
         createShifts: Shifts_1.CREATE_SHIFTS,
         updateMonthRange: MonthRange_1.UPDATE_MONTH_RANGE,
         updateDate: Shifts_3.UPDATE_DATE,

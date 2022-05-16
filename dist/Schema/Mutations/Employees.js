@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DELETE_EMPLOYEE = exports.UPDATE_EMPLOYEE_TEA = exports.UPDATE_EMPLOYEE_MIN = exports.UPDATE_EMPLOYEE_DUE_DATE = exports.UPDATE_EMPLOYEE_CODE = exports.UPDATE_EMPLOYEE_ADJ = exports.UPDATE_EMPLOYEE_REASON = exports.UPDATE_EMPLOYEE_CLOCKOUT = exports.UPDATE_EMPLOYEE_CLOCKIN = exports.UPDATE_EMPLOYEE_PUMPS = exports.UPDATE_EMPLOYEE_END = exports.UPDATE_EMPLOYEE_START = exports.CREATE_EMPLOYEE = void 0;
+exports.UPDATE_EMPLOYEE = exports.DELETE_EMPLOYEE = exports.UPDATE_EMPLOYEE_TEA = exports.UPDATE_EMPLOYEE_MIN = exports.UPDATE_EMPLOYEE_DUE_DATE = exports.UPDATE_EMPLOYEE_CODE = exports.UPDATE_EMPLOYEE_ADJ = exports.UPDATE_EMPLOYEE_REASON = exports.UPDATE_EMPLOYEE_CLOCKOUT = exports.UPDATE_EMPLOYEE_CLOCKIN = exports.UPDATE_EMPLOYEE_PUMPS = exports.UPDATE_EMPLOYEE_END = exports.UPDATE_EMPLOYEE_START = exports.CREATE_EMPLOYEE = void 0;
 const graphql_1 = require("graphql");
 const EmployeeType_1 = require("../TypeDefs/EmployeeType");
 const Timetable_1 = require("../TypeDefs/Timetable");
@@ -245,6 +245,69 @@ exports.DELETE_EMPLOYEE = {
             const { EmployeeID } = args;
             yield Employees_1.Employees.delete(EmployeeID);
             return { successful: true, message: 'DELETE WORKED' };
+        });
+    },
+};
+exports.UPDATE_EMPLOYEE = {
+    type: EmployeeType_1.EmployeeType,
+    args: {
+        FirstName: { type: graphql_1.GraphQLString },
+        LastName: { type: graphql_1.GraphQLString },
+        EmployeeID: { type: graphql_1.GraphQLInt },
+        IdNumber: { type: graphql_1.GraphQLString },
+        CellNumber: { type: graphql_1.GraphQLString },
+        Gender: { type: graphql_1.GraphQLString },
+        Position: { type: graphql_1.GraphQLString },
+        DateOfEmployment: { type: graphql_1.GraphQLString },
+        SecurityQuestion: { type: graphql_1.GraphQLString },
+        Answer: { type: graphql_1.GraphQLString },
+        Photo: { type: graphql_1.GraphQLString },
+        ShoeSize: { type: graphql_1.GraphQLInt },
+        TShirtSize: { type: graphql_1.GraphQLString },
+        JacketSize: { type: graphql_1.GraphQLString },
+        PantsSize: { type: graphql_1.GraphQLInt },
+        Bank: { type: graphql_1.GraphQLString },
+        AccountNumber: { type: graphql_1.GraphQLInt },
+        AccountType: { type: graphql_1.GraphQLString },
+        BranchCode: { type: graphql_1.GraphQLString },
+        StreetNumber: { type: graphql_1.GraphQLString },
+        StreetName: { type: graphql_1.GraphQLString },
+        Suburb: { type: graphql_1.GraphQLString },
+        City: { type: graphql_1.GraphQLString },
+        Code: { type: graphql_1.GraphQLString },
+        TaxNumber: { type: graphql_1.GraphQLString },
+    },
+    resolve(parent, args) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { FirstName, LastName, EmployeeID, IdNumber, CellNumber, Gender, Position, DateOfEmployment, SecurityQuestion, Answer, Photo, ShoeSize, TShirtSize, JacketSize, PantsSize, Bank, AccountNumber, AccountType, BranchCode, StreetNumber, StreetName, Suburb, City, Code, TaxNumber, } = args;
+            yield Employees_1.Employees.update(EmployeeID, {
+                FirstName,
+                LastName,
+                EmployeeID,
+                IdNumber,
+                CellNumber,
+                Gender,
+                Position,
+                DateOfEmployment,
+                SecurityQuestion,
+                Answer,
+                Photo,
+                ShoeSize,
+                TShirtSize,
+                JacketSize,
+                PantsSize,
+                Bank,
+                AccountNumber,
+                AccountType,
+                BranchCode,
+                StreetNumber,
+                StreetName,
+                Suburb,
+                City,
+                Code,
+                TaxNumber,
+            });
+            return { successful: true, message: 'SHIFT UPDATED' };
         });
     },
 };

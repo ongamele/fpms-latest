@@ -19,6 +19,7 @@ import { UPDATE_EMPLOYEE_MIN } from './Mutations/Employees';
 import { UPDATE_EMPLOYEE_TEA } from './Mutations/Employees';
 import { CREATE_EMPLOYEE } from './Mutations/Employees';
 import { DELETE_EMPLOYEE } from './Mutations/Employees';
+import { UPDATE_EMPLOYEE } from './Mutations/Employees';
 import { CREATE_SHIFTS } from './Mutations/Shifts';
 import { DELETE_SHIFTS } from './Mutations/Shifts';
 import { UPDATE_MONTH_RANGE } from './Mutations/MonthRange';
@@ -92,6 +93,7 @@ const Mutation = new GraphQLObjectType({
     updateEmployeeMin: UPDATE_EMPLOYEE_MIN,
     updateEmployeeTea: UPDATE_EMPLOYEE_TEA,
     createEmployee: CREATE_EMPLOYEE,
+    updateEmployee: UPDATE_EMPLOYEE,
     createShifts: CREATE_SHIFTS,
     updateMonthRange: UPDATE_MONTH_RANGE,
     updateDate: UPDATE_DATE,

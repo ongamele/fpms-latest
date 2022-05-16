@@ -31,7 +31,7 @@ const main = async () => {
     synchronize: false,
     insecureAuth: true,
     entities: [
-       Employees,
+      Employees,
       Shifts,
       MonthRange,
       WetstockMonthRange,
